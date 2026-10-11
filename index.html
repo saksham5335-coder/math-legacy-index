@@ -334,7 +334,7 @@
         <section id="view-ai-chat" class="page-view space-y-6 hidden">
             <div class="panel-card p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <h2 class="text-xl font-semibold text-slate-100">Analytical Assistant</h2>
+                    <h2 class="text-xl font-semibold text-slate-100">Analytical Assistant & Search</h2>
                     <p class="text-xs text-slate-400 mt-1">Inquire about proofs, historical contexts, or contemporary search metrics.</p>
                 </div>
 
@@ -369,12 +369,12 @@
                 <div id="chatMessages" class="flex-grow p-6 overflow-y-auto space-y-4 text-xs sm:text-sm">
                     <div class="flex items-start gap-3 bg-brand-900/60 p-4 rounded-xl border border-brand-800 max-w-3xl">
                         <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xs font-mono flex-shrink-0">
-                            AI
+                            ∑
                         </div>
                         <div class="space-y-1">
                             <span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
                             <p class="text-xs text-slate-300 leading-relaxed">
-                                Welcome. Inquire about mathematical proofs, historical developments, or comparative analytics.
+                                Welcome. Enter any question to inquire about mathematical proofs, history, or search trends. If an API key is active, AI answers directly; otherwise, inquiries launch a direct Google Search in a new tab!
                             </p>
                         </div>
                     </div>
@@ -383,7 +383,7 @@
                 <form onsubmit="handleChatSubmit(event)" class="p-3 bg-brand-900 border-t border-brand-800 flex items-center gap-2">
                     <input type="text" id="chatInput" placeholder="Enter inquiry..." class="flex-grow bg-brand-800 text-slate-100 placeholder-slate-500 text-xs sm:text-sm rounded-lg px-4 py-2.5 border border-brand-700 focus:outline-none focus:border-slate-500">
                     <button type="submit" id="chatSubmitBtn" class="px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center gap-2 flex-shrink-0">
-                        <span>Send</span>
+                        <span>Search / Ask</span>
                     </button>
                 </form>
             </div>
@@ -497,7 +497,7 @@
                     </div>
 
                     <button onclick="generateAIArtwork()" id="generateArtBtn" class="w-full py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center justify-center gap-2">
-                        <span>Generate Image</span>
+                        <span>Generate Image / Search</span>
                     </button>
                 </div>
 
@@ -557,8 +557,9 @@
                         <span id="resultC" class="text-base font-bold text-slate-100">5.00</span>
                     </div>
 
-                    <button onclick="askAIFormula('Pythagorean Theorem', 'a^2 + b^2 = c^2')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition">
-                        Inquire in Assistant Chat
+                    <button onclick="askAIFormula('Pythagorean Theorem', 'a^2 + b^2 = c^2')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
+                        <span>Inquire in Assistant / Google</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </button>
                 </div>
 
@@ -578,8 +579,9 @@
                         </div>
                     </div>
 
-                    <button onclick="askAIFormula('Hardy-Ramanujan 1729', '1^3 + 12^3 = 9^3 + 10^3 = 1729')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition">
-                        Inquire in Assistant Chat
+                    <button onclick="askAIFormula('Hardy-Ramanujan 1729', '1^3 + 12^3 = 9^3 + 10^3 = 1729')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
+                        <span>Inquire in Assistant / Google</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </button>
                 </div>
 
@@ -594,8 +596,9 @@
                         <span class="text-xl font-bold text-slate-100">e<sup>iπ</sup> + 1 = 0</span>
                     </div>
 
-                    <button onclick="askAIFormula('Euler Identity', 'e^(i*pi) + 1 = 0')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition">
-                        Inquire in Assistant Chat
+                    <button onclick="askAIFormula('Euler Identity', 'e^(i*pi) + 1 = 0')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
+                        <span>Inquire in Assistant / Google</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </button>
                 </div>
 
@@ -631,6 +634,9 @@
     </footer>
 
     <script>
+        // Optional API Key for live AI responses (If left empty, searches seamlessly redirect to Google Search)
+        const API_KEY = "AIzaSyCmtOa8Bkyma5UiDzlgnRC6Zr8z1Se5s7o";
+
         // Data Store with exact structured dossier attributes
         const titandata = {
             euclid: {
@@ -886,8 +892,6 @@
             renderH2H();
         }
 
-        const API_KEY = ""; // Provided automatically at runtime
-
         async function fetchWithBackoff(url, options, maxRetries = 3) {
             let delay = 1000;
             for (let i = 0; i < maxRetries; i++) {
@@ -903,14 +907,14 @@
             return await fetch(url, options);
         }
 
-        // Assistant Chat
+        // Assistant Chat & Fallback Search
         function setChatPrompt(promptText) {
             document.getElementById('chatInput').value = promptText;
             navigateTo('ai-chat');
         }
 
         function askAIFormula(formulaName, formulaText) {
-            setChatPrompt(`Provide a concise, clear breakdown of ${formulaName} (${formulaText}), its historical origin, and its modern mathematical significance.`);
+            setChatPrompt(`Explain ${formulaName} (${formulaText}), its historical origin, and modern mathematical significance.`);
         }
 
         async function handleChatSubmit(e) {
@@ -935,6 +939,32 @@
 
             const aiBubble = document.createElement('div');
             aiBubble.className = "flex items-start gap-3 bg-brand-900/60 p-4 rounded-xl border border-brand-800 max-w-3xl";
+
+            // DIRECT GOOGLE SEARCH REDIRECT MODE (if API_KEY is empty or missing)
+            if (!API_KEY || API_KEY.trim() === "") {
+                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userMsg)}`;
+                window.open(searchUrl, '_blank');
+
+                aiBubble.innerHTML = `
+                    <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xs font-mono flex-shrink-0">
+                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                    </div>
+                    <div class="space-y-2 flex-grow">
+                        <span class="text-xs font-semibold text-slate-300">Google Search Redirect</span>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Inquiry redirected to Google Search in a new tab:
+                        </p>
+                        <a href="${searchUrl}" target="_blank" class="inline-flex items-center gap-2 text-xs font-medium text-sky-400 hover:text-sky-300 underline">
+                            Open search results for "${escapeHtml(userMsg)}" <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                `;
+                messagesContainer.appendChild(aiBubble);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                return;
+            }
+
+            // LIVE AI RESPONSE MODE (if API_KEY is provided)
             aiBubble.innerHTML = `
                 <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xs font-mono flex-shrink-0 animate-pulse">
                     AI
@@ -993,9 +1023,14 @@
                 `;
 
             } catch (err) {
+                // Fallback to Google Search on error
+                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userMsg)}`;
                 aiBubble.querySelector('.space-y-2').innerHTML = `
-                    <span class="text-xs font-semibold text-rose-400">Error</span>
-                    <p class="text-xs text-rose-300">An error occurred while reaching the service.</p>
+                    <span class="text-xs font-semibold text-slate-300">Google Search Redirect</span>
+                    <p class="text-xs text-slate-300">API connection unavailable. Opening Google Search in a new tab:</p>
+                    <a href="${searchUrl}" target="_blank" class="inline-flex items-center gap-2 text-xs font-medium text-sky-400 hover:text-sky-300 underline mt-1">
+                        Open search results for "${escapeHtml(userMsg)}" <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
                 `;
             }
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -1015,6 +1050,13 @@
             const btn = document.getElementById('generateDebateBtn');
             const synthBtn = document.getElementById('synthesizeAudioBtn');
             const container = document.getElementById('debateTranscript');
+
+            if (!API_KEY || API_KEY.trim() === "") {
+                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(spk1 + " vs " + spk2 + " " + topic)}`;
+                window.open(searchUrl, '_blank');
+                container.innerHTML = `<p class="text-xs text-slate-300 text-center py-6">Redirecting debate inquiry to Google Search in a new tab... <a href="${searchUrl}" target="_blank" class="text-sky-400 underline">Click here if search didn't open.</a></p>`;
+                return;
+            }
 
             btn.disabled = true;
             btn.innerHTML = `Generating Dialogue...`;
@@ -1112,7 +1154,7 @@
             }
         }
 
-        // Image Art Generation
+        // Image Art Generation & Fallback Search
         async function generateAIArtwork() {
             const titan = document.getElementById('artTitan').value;
             const style = document.getElementById('artStyle').value;
@@ -1124,6 +1166,13 @@
             const placeholder = document.getElementById('artPlaceholder');
             const loading = document.getElementById('artLoading');
             const outputImg = document.getElementById('artOutputImg');
+
+            if (!API_KEY || API_KEY.trim() === "") {
+                const searchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(fullPrompt)}`;
+                window.open(searchUrl, '_blank');
+                alert("Opening Google Images for your visual prompt in a new tab!");
+                return;
+            }
 
             btn.disabled = true;
             placeholder.classList.add('hidden');
@@ -1154,13 +1203,13 @@
                     outputImg.src = imageUrl;
                     outputImg.classList.remove('hidden');
                 } else {
-                    placeholder.classList.remove('hidden');
-                    alert("Image rendering returned no inline data.");
+                    const searchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(fullPrompt)}`;
+                    window.open(searchUrl, '_blank');
                 }
 
             } catch (err) {
-                placeholder.classList.remove('hidden');
-                alert("Failed to generate artwork.");
+                const searchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(fullPrompt)}`;
+                window.open(searchUrl, '_blank');
             } finally {
                 loading.classList.add('hidden');
                 btn.disabled = false;
