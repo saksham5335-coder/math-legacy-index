@@ -1,959 +1,977 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Legacy Index — Search Volume, Proofs & Cultural Impact</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            950: '#090d16',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
-                        serif: ['Newsreader', 'Georgia', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Typography & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Trends Embed Script -->
-    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3882_RC01/embed_loader.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Legacy Index — Search Volume, Proofs & Cultural Impact</title>
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #090d16;
-            color: #f1f5f9;
-        }
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+darkMode: 'class',
+theme: {
+extend: {
+colors: {
+brand: {
+50: '#f8fafc',
+100: '#f1f5f9',
+200: '#e2e8f0',
+300: '#cbd5e1',
+400: '#94a3b8',
+500: '#64748b',
+600: '#475569',
+700: '#334155',
+800: '#1e293b',
+900: '#0f172a',
+950: '#090d16',
+}
+},
+fontFamily: {
+sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+mono: ['Fira Code', 'monospace'],
+serif: ['Newsreader', 'Georgia', 'serif']
+}
+}
+}
+}
+</script>
 
-        .serif-heading {
-            font-family: 'Newsreader', Georgia, serif;
-        }
+<!-- Typography & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        .panel-card {
-            background-color: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 16px;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
-        }
+<!-- Google Trends Embed Script -->
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3882_RC01/embed_loader.js"></script>
 
-        .panel-card:hover {
-            border-color: rgba(255, 255, 255, 0.14);
-        }
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #090d16;
+color: #f1f5f9;
+}
 
-        .trends-embed-container iframe {
-            border-radius: 12px !important;
-            width: 100% !important;
-            background: #0f172a !important;
-        }
+.serif-heading {
+font-family: 'Newsreader', Georgia, serif;
+}
 
-        .page-view {
-            transition: opacity 0.25s ease-in-out;
-        }
+.panel-card {
+background-color: rgba(15, 23, 42, 0.7);
+border: 1px solid rgba(255, 255, 255, 0.07);
+border-radius: 16px;
+transition: border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+}
 
-        /* Clean Scrollbars */
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 9999px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
-    </style>
+.panel-card:hover {
+border-color: rgba(255, 255, 255, 0.14);
+}
+
+.trends-embed-container iframe {
+border-radius: 12px !important;
+width: 100% !important;
+background: #0f172a !important;
+}
+
+.page-view {
+transition: opacity 0.25s ease-in-out;
+}
+
+/* Clean Scrollbars */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+</style>
 </head>
 
 <body class="min-h-screen flex flex-col justify-between selection:bg-slate-700 selection:text-white">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 bg-brand-950/90 backdrop-blur-md border-b border-brand-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            
-            <!-- Brand Identity -->
-            <button onclick="navigateTo('home')" class="flex items-center gap-3 text-left focus:outline-none group">
-                <div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-200 group-hover:border-slate-500 transition">
-                    <span class="font-serif italic font-bold text-lg">∑</span>
-                </div>
-                <div>
-                    <h1 class="font-bold text-sm sm:text-base tracking-tight text-slate-100 flex items-center gap-2">
-                        Math Legacy Index
-                    </h1>
-                    <p class="text-[11px] text-slate-400 font-medium hidden sm:block">Search Volume, Proofs & Cultural Impact</p>
-                </div>
-            </button>
+<!-- Header Navigation -->
+<header class="sticky top-0 z-50 bg-brand-950/90 backdrop-blur-md border-b border-brand-800/60">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
-            <!-- Main Navigation Links -->
-            <nav class="hidden lg:flex items-center gap-1 bg-brand-900/90 p-1 rounded-xl border border-brand-800">
-                <button id="nav-home" onclick="navigateTo('home')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-100 bg-brand-800">
-                    Overview
-                </button>
-                <button id="nav-trends" onclick="navigateTo('trends')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
-                    Live Trends
-                </button>
-                <button id="nav-dossiers" onclick="navigateTo('dossiers')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
-                    Dossiers
-                </button>
-                <button id="nav-ai-chat" onclick="navigateTo('ai-chat')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
-                    Assistant
-                </button>
-                <button id="nav-debates" onclick="navigateTo('debates')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
-                    Dialogues & Audio
-                </button>
-                <button id="nav-vision" onclick="navigateTo('vision')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
-                    Visual Studio
-                </button>
-                <button id="nav-sandbox" onclick="navigateTo('sandbox')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
-                    Formula Sandbox
-                </button>
-            </nav>
+<!-- Brand Identity -->
+<button onclick="navigateTo('home')" class="flex items-center gap-3 text-left focus:outline-none group">
+<div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-200 group-hover:border-slate-500 transition">
+<span class="font-serif italic font-bold text-lg">∑</span>
+</div>
+<div>
+<h1 class="font-bold text-sm sm:text-base tracking-tight text-slate-100 flex items-center gap-2">
+Math Legacy Index
+</h1>
+<p class="text-[11px] text-slate-400 font-medium hidden sm:block">Search Volume, Proofs & Cultural Impact</p>
+</div>
+</button>
 
-            <!-- External Reference & Mobile Toggle -->
-            <div class="flex items-center gap-3">
-                <button onclick="toggleApiKeyModal()" class="px-3 py-1.5 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center gap-2">
-                    <i class="fa-solid fa-key text-[10px] text-amber-400"></i>
-                    <span id="apiKeyBtnText">Set Gemini Key</span>
-                </button>
+<!-- Main Navigation Links -->
+<nav class="hidden lg:flex items-center gap-1 bg-brand-900/90 p-1 rounded-xl border border-brand-800">
+<button id="nav-home" onclick="navigateTo('home')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-100 bg-brand-800">
+Overview
+</button>
+<button id="nav-trends" onclick="navigateTo('trends')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
+Live Trends
+</button>
+<button id="nav-dossiers" onclick="navigateTo('dossiers')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
+Dossiers
+</button>
+<button id="nav-ai-chat" onclick="navigateTo('ai-chat')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
+Assistant
+</button>
+<button id="nav-debates" onclick="navigateTo('debates')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
+Dialogues & Audio
+</button>
+<button id="nav-vision" onclick="navigateTo('vision')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
+Visual Studio
+</button>
+<button id="nav-sandbox" onclick="navigateTo('sandbox')" class="nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200">
+Formula Sandbox
+</button>
+</nav>
 
-                <a href="https://trends.google.com/trends/explore?date=all&q=%2Fm%2F02k02,%2Fm%2F05sr0,%2Fm%2F0372p,%2Fm%2F04jzj,%2Fm%2F0cty0&hl=en-US" target="_blank" class="hidden xl:flex px-3 py-1.5 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition items-center gap-2">
-                    <span>Google Trends Link</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                </a>
+<!-- External Reference & Mobile Toggle -->
+<div class="flex items-center gap-3">
+<a href="https://trends.google.com/trends/explore?date=all&q=%2Fm%2F02k02,%2Fm%2F05sr0,%2Fm%2F0372p,%2Fm%2F04jzj,%2Fm%2F0cty0&hl=en-US" target="_blank" class="hidden xl:flex px-3 py-1.5 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition items-center gap-2">
+<span>Google Trends Link</span>
+<i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+</a>
 
-                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg bg-brand-900 text-slate-300 hover:text-white border border-brand-800">
-                    <i class="fa-solid fa-bars text-sm"></i>
-                </button>
-            </div>
-        </div>
+<button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg bg-brand-900 text-slate-300 hover:text-white border border-brand-800">
+<i class="fa-solid fa-bars text-sm"></i>
+</button>
+</div>
+</div>
 
-        <!-- Gemini API Key Settings Modal -->
-        <div id="apiKeyModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-            <div class="bg-brand-900 border border-brand-700 rounded-2xl p-6 max-w-md w-full space-y-4 shadow-2xl">
-                <div class="flex items-center justify-between">
-                    <h3 class="text-base font-semibold text-slate-100 flex items-center gap-2">
-                        <i class="fa-solid fa-key text-amber-400"></i> Gemini API Key Settings
-                    </h3>
-                    <button onclick="toggleApiKeyModal()" class="text-slate-400 hover:text-slate-200">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-                <p class="text-xs text-slate-400 leading-relaxed">
-                    Save your Gemini API Key to run native in-app chats, audio dialogue synthesis, and visual rendering directly within this site.
-                </p>
-                <div>
-                    <input type="password" id="userApiKeyInput" placeholder="AIzaSy..." class="w-full bg-brand-950 border border-brand-700 rounded-lg p-2.5 text-xs text-slate-100 font-mono focus:outline-none focus:border-amber-400">
-                </div>
-                <div class="flex items-center justify-between pt-2">
-                    <button onclick="clearUserApiKey()" class="text-xs text-rose-400 hover:text-rose-300 underline">Clear Key</button>
-                    <div class="flex gap-2">
-                        <button onclick="toggleApiKeyModal()" class="px-3 py-1.5 rounded-lg bg-brand-800 text-slate-300 text-xs font-medium">Cancel</button>
-                        <button onclick="saveUserApiKey()" class="px-4 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-semibold">Save Key</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Mobile Nav Menu -->
+<div id="mobileMenu" class="hidden lg:hidden border-t border-brand-800 bg-brand-950 p-4 space-y-2">
+<button onclick="navigateTo('home'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium bg-brand-800 text-white">Overview</button>
+<button onclick="navigateTo('trends'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Live Trends</button>
+<button onclick="navigateTo('dossiers'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Mathematical Dossiers</button>
+<button onclick="navigateTo('ai-chat'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Assistant Chat</button>
+<button onclick="navigateTo('debates'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Dialogues & Audio</button>
+<button onclick="navigateTo('vision'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Visual Studio</button>
+<button onclick="navigateTo('sandbox'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Formula Sandbox</button>
+</div>
+</header>
 
-        <!-- Mobile Nav Menu -->
-        <div id="mobileMenu" class="hidden lg:hidden border-t border-brand-800 bg-brand-950 p-4 space-y-2">
-            <button onclick="navigateTo('home'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium bg-brand-800 text-white">Overview</button>
-            <button onclick="navigateTo('trends'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Live Trends</button>
-            <button onclick="navigateTo('dossiers'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Mathematical Dossiers</button>
-            <button onclick="navigateTo('ai-chat'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Assistant Chat</button>
-            <button onclick="navigateTo('debates'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Dialogues & Audio</button>
-            <button onclick="navigateTo('vision'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Visual Studio</button>
-            <button onclick="navigateTo('sandbox'); toggleMobileMenu()" class="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-brand-900">Formula Sandbox</button>
-        </div>
-    </header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+<!-- VIEW 1: OVERVIEW LANDING -->
+<section id="view-home" class="page-view space-y-12">
+<!-- Hero Card -->
+<div class="panel-card p-8 sm:p-12 border border-brand-800 flex flex-col lg:flex-row items-start justify-between gap-8">
+<div class="max-w-2xl space-y-5">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-brand-800/80 border border-brand-700 text-slate-300 text-xs font-mono">
+<span>Index Edition 2026</span>
+</div>
+<h2 class="serif-heading text-3xl sm:text-5xl font-semibold text-slate-100 leading-tight">
+Math Legacy Index
+</h2>
+<p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+Search volume, proofs & cultural impact of history’s greatest mathematicians: Euclid, Pythagoras, Leibniz, Euler, and Ramanujan.
+</p>
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<button onclick="navigateTo('dossiers')" class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center gap-2">
+<span>Explore Dossiers</span>
+<i class="fa-solid fa-arrow-right text-[10px]"></i>
+</button>
+<button onclick="navigateTo('trends')" class="px-4 py-2 rounded-lg bg-brand-800 hover:bg-brand-700 text-slate-200 border border-brand-700 font-medium text-xs transition flex items-center gap-2">
+<span>Live Google Trends</span>
+</button>
+</div>
+</div>
 
-        <!-- VIEW 1: OVERVIEW LANDING -->
-        <section id="view-home" class="page-view space-y-12">
-            <!-- Hero Card -->
-            <div class="panel-card p-8 sm:p-12 border border-brand-800 flex flex-col lg:flex-row items-start justify-between gap-8">
-                <div class="max-w-2xl space-y-5">
-                    <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-brand-800/80 border border-brand-700 text-slate-300 text-xs font-mono">
-                        <span>Index Edition 2026</span>
-                    </div>
-                    <h2 class="serif-heading text-3xl sm:text-5xl font-semibold text-slate-100 leading-tight">
-                        Math Legacy Index
-                    </h2>
-                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                        Search volume, proofs & cultural impact of history’s greatest mathematicians: Euclid, Pythagoras, Leibniz, Euler, and Ramanujan.
-                    </p>
-                    <div class="flex flex-wrap items-center gap-3 pt-2">
-                        <button onclick="navigateTo('dossiers')" class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center gap-2">
-                            <span>Explore Dossiers</span>
-                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </button>
-                        <button onclick="navigateTo('trends')" class="px-4 py-2 rounded-lg bg-brand-800 hover:bg-brand-700 text-slate-200 border border-brand-700 font-medium text-xs transition flex items-center gap-2">
-                            <span>Live Google Trends</span>
-                        </button>
-                    </div>
-                </div>
+<!-- Fast Metric Summary Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full lg:w-96">
+<div class="p-4 rounded-xl bg-brand-900/80 border border-brand-800">
+<span class="text-[11px] text-slate-400 font-mono uppercase tracking-wider">Classical Geometry</span>
+<h4 class="font-bold text-slate-100 text-sm mt-1">Euclid & Pythagoras</h4>
+<p class="text-xs text-slate-400 mt-1">Constant year-round baseline search demand via core geometry curricula.</p>
+</div>
+<div class="p-4 rounded-xl bg-brand-900/80 border border-brand-800">
+<span class="text-[11px] text-slate-400 font-mono uppercase tracking-wider">Calculus & Analysis</span>
+<h4 class="font-bold text-slate-100 text-sm mt-1">Leibniz & Euler</h4>
+<p class="text-xs text-slate-400 mt-1">Annual exam-cycle spikes during university exam seasons globally.</p>
+</div>
+<div class="p-4 rounded-xl bg-brand-900/80 border border-brand-800 sm:col-span-2">
+<span class="text-[11px] text-slate-400 font-mono uppercase tracking-wider">Number Theory</span>
+<h4 class="font-bold text-slate-100 text-sm mt-1">Srinivasa Ramanujan</h4>
+<p class="text-xs text-slate-400 mt-1">Unrivaled India search volume surges every year on Dec 22 (National Math Day).</p>
+</div>
+</div>
+</div>
 
-                <!-- Fast Metric Summary Cards -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full lg:w-96">
-                    <div class="p-4 rounded-xl bg-brand-900/80 border border-brand-800">
-                        <span class="text-[11px] text-slate-400 font-mono uppercase tracking-wider">Classical Geometry</span>
-                        <h4 class="font-bold text-slate-100 text-sm mt-1">Euclid & Pythagoras</h4>
-                        <p class="text-xs text-slate-400 mt-1">Constant year-round baseline search demand via core geometry curricula.</p>
-                    </div>
-                    <div class="p-4 rounded-xl bg-brand-900/80 border border-brand-800">
-                        <span class="text-[11px] text-slate-400 font-mono uppercase tracking-wider">Calculus & Analysis</span>
-                        <h4 class="font-bold text-slate-100 text-sm mt-1">Leibniz & Euler</h4>
-                        <p class="text-xs text-slate-400 mt-1">Annual exam-cycle spikes during university exam seasons globally.</p>
-                    </div>
-                    <div class="p-4 rounded-xl bg-brand-900/80 border border-brand-800 sm:col-span-2">
-                        <span class="text-[11px] text-slate-400 font-mono uppercase tracking-wider">Number Theory</span>
-                        <h4 class="font-bold text-slate-100 text-sm mt-1">Srinivasa Ramanujan</h4>
-                        <p class="text-xs text-slate-400 mt-1">Unrivaled India search volume surges every year on Dec 22 (National Math Day).</p>
-                    </div>
-                </div>
-            </div>
+<!-- Features Summary Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="panel-card p-6 flex flex-col justify-between">
+<div>
+<span class="text-xs font-mono text-slate-400">01 / DOSSIERS</span>
+<h3 class="font-semibold text-base text-slate-100 mt-2">Biographical Legacy Profiles</h3>
+<p class="text-xs text-slate-400 mt-2 leading-relaxed">
+Detailed breakdowns covering historical eras, signature discoveries, quotes, and specific search spike drivers.
+</p>
+</div>
+<button onclick="navigateTo('dossiers')" class="mt-4 text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5 self-start">
+View Dossiers <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</button>
+</div>
 
-            <!-- Features Summary Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="panel-card p-6 flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-mono text-slate-400">01 / DOSSIERS</span>
-                        <h3 class="font-semibold text-base text-slate-100 mt-2">Biographical Legacy Profiles</h3>
-                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                            Detailed breakdowns covering historical eras, signature discoveries, quotes, and specific search spike drivers.
-                        </p>
-                    </div>
-                    <button onclick="navigateTo('dossiers')" class="mt-4 text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5 self-start">
-                        View Dossiers <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </button>
-                </div>
+<div class="panel-card p-6 flex flex-col justify-between">
+<div>
+<span class="text-xs font-mono text-slate-400">02 / TRENDS</span>
+<h3 class="font-semibold text-base text-slate-100 mt-2">Live Google Trends</h3>
+<p class="text-xs text-slate-400 mt-2 leading-relaxed">
+Compare Google search volume index across Freebase entities (/m/02k02, /m/05sr0, /m/0372p, /m/04jzj, /m/0cty0).
+</p>
+</div>
+<button onclick="navigateTo('trends')" class="mt-4 text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5 self-start">
+Open Trends <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</button>
+</div>
 
-                <div class="panel-card p-6 flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-mono text-slate-400">02 / TRENDS</span>
-                        <h3 class="font-semibold text-base text-slate-100 mt-2">Live Google Trends</h3>
-                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                            Compare Google search volume index across Freebase entities (/m/02k02, /m/05sr0, /m/0372p, /m/04jzj, /m/0cty0).
-                        </p>
-                    </div>
-                    <button onclick="navigateTo('trends')" class="mt-4 text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5 self-start">
-                        Open Trends <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </button>
-                </div>
+<div class="panel-card p-6 flex flex-col justify-between">
+<div>
+<span class="text-xs font-mono text-slate-400">03 / AUDIO & DIALOGUES</span>
+<h3 class="font-semibold text-base text-slate-100 mt-2">Historical Dialogues</h3>
+<p class="text-xs text-slate-400 mt-2 leading-relaxed">
+Generate multi-speaker philosophical dialogues between key figures with synthesized audio playback.
+</p>
+</div>
+<button onclick="navigateTo('debates')" class="mt-4 text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5 self-start">
+Listen to Dialogues <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</button>
+</div>
+</div>
 
-                <div class="panel-card p-6 flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-mono text-slate-400">03 / AUDIO & DIALOGUES</span>
-                        <h3 class="font-semibold text-base text-slate-100 mt-2">Historical Dialogues</h3>
-                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                            Generate multi-speaker philosophical dialogues between key figures with synthesized audio playback.
-                        </p>
-                    </div>
-                    <button onclick="navigateTo('debates')" class="mt-4 text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5 self-start">
-                        Listen to Dialogues <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </button>
-                </div>
-            </div>
+<!-- Featured Mathematician Quick Grid -->
+<div class="space-y-4">
+<h3 class="text-lg font-semibold tracking-tight text-slate-200">Indexed Figures</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="homeMathematicianGrid">
+<!-- Populated dynamically via JavaScript -->
+</div>
+</div>
+</section>
 
-            <!-- Featured Mathematician Quick Grid -->
-            <div class="space-y-4">
-                <h3 class="text-lg font-semibold tracking-tight text-slate-200">Indexed Figures</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="homeMathematicianGrid">
-                    <!-- Populated dynamically via JavaScript -->
-                </div>
-            </div>
-        </section>
+<!-- VIEW 2: LIVE TRENDS & COMPARISONS -->
+<section id="view-trends" class="page-view space-y-8 hidden">
+<div class="panel-card p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div>
+<h2 class="text-xl font-semibold text-slate-100">Google Search Interest Index</h2>
+<p class="text-xs text-slate-400 mt-1">Embedded Google Trends search interest metrics for Freebase entities.</p>
+</div>
 
-        <!-- VIEW 2: LIVE TRENDS & COMPARISONS -->
-        <section id="view-trends" class="page-view space-y-8 hidden">
-            <div class="panel-card p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div>
-                    <h2 class="text-xl font-semibold text-slate-100">Google Search Interest Index</h2>
-                    <p class="text-xs text-slate-400 mt-1">Embedded Google Trends search interest metrics for Freebase entities.</p>
-                </div>
+<div class="inline-flex p-1 bg-brand-900 rounded-lg border border-brand-800 w-full sm:w-auto">
+<button id="scopeWorldwideBtn" onclick="switchGeo('worldwide')" class="flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition bg-brand-800 text-slate-100">
+Worldwide
+</button>
+<button id="scopeIndiaBtn" onclick="switchGeo('india')" class="flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition text-slate-400 hover:text-slate-200">
+India
+</button>
+</div>
+</div>
 
-                <div class="inline-flex p-1 bg-brand-900 rounded-lg border border-brand-800 w-full sm:w-auto">
-                    <button id="scopeWorldwideBtn" onclick="switchGeo('worldwide')" class="flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition bg-brand-800 text-slate-100">
-                        Worldwide
-                    </button>
-                    <button id="scopeIndiaBtn" onclick="switchGeo('india')" class="flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition text-slate-400 hover:text-slate-200">
-                        India
-                    </button>
-                </div>
-            </div>
+<!-- Google Trends Embed Widget Target Container -->
+<div class="panel-card p-6 space-y-4">
+<div class="flex items-center justify-between border-b border-brand-800 pb-3">
+<span class="text-xs font-mono text-slate-400">Search Interest Over Time</span>
+<span class="text-[10px] font-mono text-slate-500">Freebase IDs: /m/02k02, /m/05sr0, /m/0372p, /m/04jzj, /m/0cty0</span>
+</div>
 
-            <!-- Google Trends Embed Widget Target Container -->
-            <div class="panel-card p-6 space-y-4">
-                <div class="flex items-center justify-between border-b border-brand-800 pb-3">
-                    <span class="text-xs font-mono text-slate-400">Search Interest Over Time</span>
-                    <span class="text-[10px] font-mono text-slate-500">Freebase IDs: /m/02k02, /m/05sr0, /m/0372p, /m/04jzj, /m/0cty0</span>
-                </div>
+<div class="min-h-[420px] trends-embed-container" id="trendsTimeTarget">
+<!-- Google Trends iFrame mounts here -->
+</div>
+</div>
 
-                <div class="min-h-[420px] trends-embed-container" id="trendsTimeTarget">
-                    <!-- Google Trends iFrame mounts here -->
-                </div>
-            </div>
+<!-- Head to Head Matrix -->
+<div class="panel-card p-6 space-y-6">
+<div>
+<h3 class="text-base font-semibold text-slate-100">Head-to-Head Comparison Matrix</h3>
+<p class="text-xs text-slate-400 mt-1">Direct side-by-side metric comparison between any two figures.</p>
+</div>
 
-            <!-- Head to Head Matrix -->
-            <div class="panel-card p-6 space-y-6">
-                <div>
-                    <h3 class="text-base font-semibold text-slate-100">Head-to-Head Comparison Matrix</h3>
-                    <p class="text-xs text-slate-400 mt-1">Direct side-by-side metric comparison between any two figures.</p>
-                </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center gap-3 bg-brand-900 p-3 rounded-lg border border-brand-800">
+<span class="text-xs font-mono text-slate-400">Subject A:</span>
+<select id="h2hA" onchange="renderH2H()" class="bg-brand-800 text-slate-100 text-xs font-medium rounded-md p-2 flex-grow border border-brand-700 focus:outline-none">
+<option value="euclid">Euclid</option>
+<option value="pythagoras">Pythagoras</option>
+<option value="leibniz">Gottfried Wilhelm Leibniz</option>
+<option value="euler">Leonhard Euler</option>
+<option value="ramanujan" selected>Srinivasa Ramanujan</option>
+</select>
+</div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="flex items-center gap-3 bg-brand-900 p-3 rounded-lg border border-brand-800">
-                        <span class="text-xs font-mono text-slate-400">Subject A:</span>
-                        <select id="h2hA" onchange="renderH2H()" class="bg-brand-800 text-slate-100 text-xs font-medium rounded-md p-2 flex-grow border border-brand-700 focus:outline-none">
-                            <option value="euclid">Euclid</option>
-                            <option value="pythagoras">Pythagoras</option>
-                            <option value="leibniz">Gottfried Wilhelm Leibniz</option>
-                            <option value="euler">Leonhard Euler</option>
-                            <option value="ramanujan" selected>Srinivasa Ramanujan</option>
-                        </select>
-                    </div>
+<div class="flex items-center gap-3 bg-brand-900 p-3 rounded-lg border border-brand-800">
+<span class="text-xs font-mono text-slate-400">Subject B:</span>
+<select id="h2hB" onchange="renderH2H()" class="bg-brand-800 text-slate-100 text-xs font-medium rounded-md p-2 flex-grow border border-brand-700 focus:outline-none">
+<option value="euclid">Euclid</option>
+<option value="pythagoras" selected>Pythagoras</option>
+<option value="leibniz">Gottfried Wilhelm Leibniz</option>
+<option value="euler">Leonhard Euler</option>
+<option value="ramanujan">Srinivasa Ramanujan</option>
+</select>
+</div>
+</div>
 
-                    <div class="flex items-center gap-3 bg-brand-900 p-3 rounded-lg border border-brand-800">
-                        <span class="text-xs font-mono text-slate-400">Subject B:</span>
-                        <select id="h2hB" onchange="renderH2H()" class="bg-brand-800 text-slate-100 text-xs font-medium rounded-md p-2 flex-grow border border-brand-700 focus:outline-none">
-                            <option value="euclid">Euclid</option>
-                            <option value="pythagoras" selected>Pythagoras</option>
-                            <option value="leibniz">Gottfried Wilhelm Leibniz</option>
-                            <option value="euler">Leonhard Euler</option>
-                            <option value="ramanujan">Srinivasa Ramanujan</option>
-                        </select>
-                    </div>
-                </div>
+<div id="h2hTableContainer" class="overflow-x-auto">
+<!-- Rendered dynamically -->
+</div>
+</div>
+</section>
 
-                <div id="h2hTableContainer" class="overflow-x-auto">
-                    <!-- Rendered dynamically -->
-                </div>
-            </div>
-        </section>
+<!-- VIEW 3: MATHEMATICAL DOSSIERS -->
+<section id="view-dossiers" class="page-view space-y-8 hidden">
+<div class="panel-card p-6 space-y-1">
+<h2 class="text-xl font-semibold text-slate-100">Mathematical Dossiers & Legacy Profiles</h2>
+<p class="text-xs text-slate-400">Biographical profiles, signature contributions, and search spike explanations.</p>
+</div>
 
-        <!-- VIEW 3: MATHEMATICAL DOSSIERS -->
-        <section id="view-dossiers" class="page-view space-y-8 hidden">
-            <div class="panel-card p-6 space-y-1">
-                <h2 class="text-xl font-semibold text-slate-100">Mathematical Dossiers & Legacy Profiles</h2>
-                <p class="text-xs text-slate-400">Biographical profiles, signature contributions, and search spike explanations.</p>
-            </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="dossierCardsContainer">
+<!-- Loaded dynamically with exact structured details -->
+</div>
+</section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="dossierCardsContainer">
-                <!-- Loaded dynamically with exact structured details -->
-            </div>
-        </section>
+<!-- VIEW 4: RESEARCH ASSISTANT CHAT -->
+<section id="view-ai-chat" class="page-view space-y-6 hidden">
+<div class="panel-card p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+                    <h2 class="text-xl font-semibold text-slate-100">Analytical Assistant</h2>
+                    <h2 class="text-xl font-semibold text-slate-100">Analytical Assistant & Search</h2>
+<p class="text-xs text-slate-400 mt-1">Inquire about proofs, historical contexts, or contemporary search metrics.</p>
+</div>
 
-        <!-- VIEW 4: RESEARCH ASSISTANT CHAT -->
-        <section id="view-ai-chat" class="page-view space-y-6 hidden">
-            <div class="panel-card p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <h2 class="text-xl font-semibold text-slate-100">Analytical Assistant & Gemini Search</h2>
-                    <p class="text-xs text-slate-400 mt-1">Inquire about proofs, historical contexts, or contemporary search metrics.</p>
-                </div>
+<!-- Search Grounding Toggle -->
+<div class="flex items-center gap-3 bg-brand-900 px-3.5 py-2 rounded-lg border border-brand-800 self-start md:self-auto">
+<label class="relative inline-flex items-center cursor-pointer">
+<input type="checkbox" id="chatSearchGroundingToggle" class="sr-only peer" checked>
+<div class="w-9 h-5 bg-brand-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate-200"></div>
+</label>
+<div class="text-xs">
+<span class="font-medium text-slate-200 block">Web Search Grounding</span>
+</div>
+</div>
+</div>
 
-                <!-- Search Grounding Toggle -->
-                <div class="flex items-center gap-3 bg-brand-900 px-3.5 py-2 rounded-lg border border-brand-800 self-start md:self-auto">
-                    <label class="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" id="chatSearchGroundingToggle" class="sr-only peer" checked>
-                        <div class="w-9 h-5 bg-brand-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate-200"></div>
-                    </label>
-                    <div class="text-xs">
-                        <span class="font-medium text-slate-200 block">Web Search Grounding</span>
-                    </div>
-                </div>
-            </div>
+<!-- Inquiry Prompt Suggestions -->
+<div class="flex flex-wrap gap-2 items-center">
+<span class="text-xs font-mono text-slate-500 mr-2">Sample Inquiries:</span>
+<button onclick="setChatPrompt('Explain Ramanujan\'s Taxicab number 1729 and how he discovered it.')" class="px-3 py-1 rounded-md bg-brand-900 hover:bg-brand-800 border border-brand-800 text-xs text-slate-300 transition">
+Ramanujan's 1729
+</button>
+<button onclick="setChatPrompt('Why is Euler\'s identity e^(i*pi) + 1 = 0 considered foundational?')" class="px-3 py-1 rounded-md bg-brand-900 hover:bg-brand-800 border border-brand-800 text-xs text-slate-300 transition">
+Euler's Identity
+</button>
+<button onclick="setChatPrompt('Compare the calculus notations of Leibniz versus Newton.')" class="px-3 py-1 rounded-md bg-brand-900 hover:bg-brand-800 border border-brand-800 text-xs text-slate-300 transition">
+Calculus Notation
+</button>
+</div>
 
-            <!-- Inquiry Prompt Suggestions -->
-            <div class="flex flex-wrap gap-2 items-center">
-                <span class="text-xs font-mono text-slate-500 mr-2">Sample Inquiries:</span>
-                <button onclick="setChatPrompt('Explain Ramanujan\'s Taxicab number 1729 and how he discovered it.')" class="px-3 py-1 rounded-md bg-brand-900 hover:bg-brand-800 border border-brand-800 text-xs text-slate-300 transition">
-                    Ramanujan's 1729
-                </button>
-                <button onclick="setChatPrompt('Why is Euler\'s identity e^(i*pi) + 1 = 0 considered foundational?')" class="px-3 py-1 rounded-md bg-brand-900 hover:bg-brand-800 border border-brand-800 text-xs text-slate-300 transition">
-                    Euler's Identity
-                </button>
-                <button onclick="setChatPrompt('Compare the calculus notations of Leibniz versus Newton.')" class="px-3 py-1 rounded-md bg-brand-900 hover:bg-brand-800 border border-brand-800 text-xs text-slate-300 transition">
-                    Calculus Notation
-                </button>
-            </div>
-
-            <!-- Chat Console Container -->
-            <div class="panel-card border border-brand-800 overflow-hidden flex flex-col h-[520px]">
-                <div id="chatMessages" class="flex-grow p-6 overflow-y-auto space-y-4 text-xs sm:text-sm">
-                    <div class="flex items-start gap-3 bg-brand-900/60 p-4 rounded-xl border border-brand-800 max-w-3xl">
-                        <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xs font-mono flex-shrink-0">
+<!-- Chat Console Container -->
+<div class="panel-card border border-brand-800 overflow-hidden flex flex-col h-[520px]">
+<div id="chatMessages" class="flex-grow p-6 overflow-y-auto space-y-4 text-xs sm:text-sm">
+<div class="flex items-start gap-3 bg-brand-900/60 p-4 rounded-xl border border-brand-800 max-w-3xl">
+<div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xs font-mono flex-shrink-0">
+                            AI
                             ∑
-                        </div>
-                        <div class="space-y-1">
-                            <span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                Welcome. Enter any question to inquire about mathematical proofs, history, or search trends. If an API key is active, Gemini answers directly inside the app; otherwise, inquiries launch directly in Gemini!
-                            </p>
-                        </div>
-                    </div>
-                </div>
+</div>
+<div class="space-y-1">
+<span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
+<p class="text-xs text-slate-300 leading-relaxed">
+                                Welcome. Inquire about mathematical proofs, historical developments, or comparative analytics.
+                                Welcome. Enter any question to inquire about mathematical proofs, history, or search trends. If an API key is active, AI answers directly; otherwise, inquiries launch a direct Google Search in a new tab!
+</p>
+</div>
+</div>
+</div>
 
-                <form onsubmit="handleChatSubmit(event)" class="p-3 bg-brand-900 border-t border-brand-800 flex items-center gap-2">
-                    <input type="text" id="chatInput" placeholder="Enter inquiry for Gemini..." class="flex-grow bg-brand-800 text-slate-100 placeholder-slate-500 text-xs sm:text-sm rounded-lg px-4 py-2.5 border border-brand-700 focus:outline-none focus:border-slate-500">
-                    <button type="submit" id="chatSubmitBtn" class="px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center gap-2 flex-shrink-0">
-                        <span>Ask / Launch Gemini</span>
-                    </button>
-                </form>
-            </div>
-        </section>
+<form onsubmit="handleChatSubmit(event)" class="p-3 bg-brand-900 border-t border-brand-800 flex items-center gap-2">
+<input type="text" id="chatInput" placeholder="Enter inquiry..." class="flex-grow bg-brand-800 text-slate-100 placeholder-slate-500 text-xs sm:text-sm rounded-lg px-4 py-2.5 border border-brand-700 focus:outline-none focus:border-slate-500">
+<button type="submit" id="chatSubmitBtn" class="px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center gap-2 flex-shrink-0">
+                        <span>Send</span>
+                        <span>Search / Ask</span>
+</button>
+</form>
+</div>
+</section>
 
-        <!-- VIEW 5: DIALOGUES & AUDIO SYNTHESIS -->
-        <section id="view-debates" class="page-view space-y-8 hidden">
-            <div class="panel-card p-6">
-                <h2 class="text-xl font-semibold text-slate-100">Historical Dialogues & Speech Synthesis</h2>
-                <p class="text-xs text-slate-400 mt-1">Synthesize multi-speaker philosophical dialogues between mathematical figures.</p>
-            </div>
+<!-- VIEW 5: DIALOGUES & AUDIO SYNTHESIS -->
+<section id="view-debates" class="page-view space-y-8 hidden">
+<div class="panel-card p-6">
+<h2 class="text-xl font-semibold text-slate-100">Historical Dialogues & Speech Synthesis</h2>
+<p class="text-xs text-slate-400 mt-1">Synthesize multi-speaker philosophical dialogues between mathematical figures.</p>
+</div>
 
-            <div class="panel-card p-6 space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                        <label class="block text-xs font-mono text-slate-400 uppercase mb-2">Speaker A</label>
-                        <select id="debateSpeaker1" class="w-full bg-brand-900 text-slate-100 border border-brand-800 rounded-lg p-2.5 text-xs font-medium focus:outline-none">
-                            <option value="Leibniz">Gottfried Leibniz</option>
-                            <option value="Euler">Leonhard Euler</option>
-                            <option value="Pythagoras">Pythagoras</option>
-                            <option value="Ramanujan">Srinivasa Ramanujan</option>
-                            <option value="Euclid">Euclid</option>
-                        </select>
-                    </div>
+<div class="panel-card p-6 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div>
+<label class="block text-xs font-mono text-slate-400 uppercase mb-2">Speaker A</label>
+<select id="debateSpeaker1" class="w-full bg-brand-900 text-slate-100 border border-brand-800 rounded-lg p-2.5 text-xs font-medium focus:outline-none">
+<option value="Leibniz">Gottfried Leibniz</option>
+<option value="Euler">Leonhard Euler</option>
+<option value="Pythagoras">Pythagoras</option>
+<option value="Ramanujan">Srinivasa Ramanujan</option>
+<option value="Euclid">Euclid</option>
+</select>
+</div>
 
-                    <div>
-                        <label class="block text-xs font-mono text-slate-400 uppercase mb-2">Speaker B</label>
-                        <select id="debateSpeaker2" class="w-full bg-brand-900 text-slate-100 border border-brand-800 rounded-lg p-2.5 text-xs font-medium focus:outline-none">
-                            <option value="Ramanujan" selected>Srinivasa Ramanujan</option>
-                            <option value="Euler">Leonhard Euler</option>
-                            <option value="Euclid">Euclid</option>
-                            <option value="Leibniz">Gottfried Leibniz</option>
-                            <option value="Pythagoras">Pythagoras</option>
-                        </select>
-                    </div>
+<div>
+<label class="block text-xs font-mono text-slate-400 uppercase mb-2">Speaker B</label>
+<select id="debateSpeaker2" class="w-full bg-brand-900 text-slate-100 border border-brand-800 rounded-lg p-2.5 text-xs font-medium focus:outline-none">
+<option value="Ramanujan" selected>Srinivasa Ramanujan</option>
+<option value="Euler">Leonhard Euler</option>
+<option value="Euclid">Euclid</option>
+<option value="Leibniz">Gottfried Leibniz</option>
+<option value="Pythagoras">Pythagoras</option>
+</select>
+</div>
 
-                    <div>
-                        <label class="block text-xs font-mono text-slate-400 uppercase mb-2">Discussion Topic</label>
-                        <select id="debateTopic" class="w-full bg-brand-900 text-slate-100 border border-brand-800 rounded-lg p-2.5 text-xs font-medium focus:outline-none">
-                            <option value="Rigor vs. Intuition in Mathematical Discovery">Rigor vs. Intuition in Discovery</option>
-                            <option value="Is Mathematics Discovered or Invented?">Is Mathematics Discovered or Invented?</option>
-                            <option value="The Concept of Infinity and Infinite Series">The Nature of Infinite Series</option>
-                            <option value="Geometry vs Algebra as the Fundamental Foundation">Geometry vs. Algebra</option>
-                        </select>
-                    </div>
-                </div>
+<div>
+<label class="block text-xs font-mono text-slate-400 uppercase mb-2">Discussion Topic</label>
+<select id="debateTopic" class="w-full bg-brand-900 text-slate-100 border border-brand-800 rounded-lg p-2.5 text-xs font-medium focus:outline-none">
+<option value="Rigor vs. Intuition in Mathematical Discovery">Rigor vs. Intuition in Discovery</option>
+<option value="Is Mathematics Discovered or Invented?">Is Mathematics Discovered or Invented?</option>
+<option value="The Concept of Infinity and Infinite Series">The Nature of Infinite Series</option>
+<option value="Geometry vs Algebra as the Fundamental Foundation">Geometry vs. Algebra</option>
+</select>
+</div>
+</div>
 
-                <div class="flex flex-wrap gap-3 items-center justify-between pt-2">
-                    <button onclick="generateAIDebate()" id="generateDebateBtn" class="px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center gap-2">
-                        <i class="fa-solid fa-align-left text-[10px]"></i> Generate Dialogue Script
-                    </button>
+<div class="flex flex-wrap gap-3 items-center justify-between pt-2">
+<button onclick="generateAIDebate()" id="generateDebateBtn" class="px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center gap-2">
+<i class="fa-solid fa-align-left text-[10px]"></i> Generate Dialogue Script
+</button>
 
-                    <button onclick="synthesizeDebateAudio()" id="synthesizeAudioBtn" class="px-4 py-2.5 rounded-lg bg-brand-800 hover:bg-brand-700 text-slate-200 border border-brand-700 font-semibold text-xs transition flex items-center gap-2 disabled:opacity-50" disabled>
-                        <i class="fa-solid fa-volume-high text-[10px]"></i> Synthesize Audio
-                    </button>
-                </div>
-            </div>
+<button onclick="synthesizeDebateAudio()" id="synthesizeAudioBtn" class="px-4 py-2.5 rounded-lg bg-brand-800 hover:bg-brand-700 text-slate-200 border border-brand-700 font-semibold text-xs transition flex items-center gap-2 disabled:opacity-50" disabled>
+<i class="fa-solid fa-volume-high text-[10px]"></i> Synthesize Audio
+</button>
+</div>
+</div>
 
-            <!-- Dialogue Transcript Output -->
-            <div class="panel-card p-6 space-y-4">
-                <div class="flex items-center justify-between border-b border-brand-800 pb-3">
-                    <h3 class="text-sm font-semibold text-slate-200">Transcript</h3>
-                    <div id="audioPlayerContainer" class="hidden flex items-center gap-3 bg-brand-900 px-3 py-1.5 rounded-lg border border-brand-800">
-                        <span class="text-xs font-mono text-slate-400">Audio:</span>
-                        <audio id="ttsAudioPlayer" controls class="h-6 max-w-xs"></audio>
-                    </div>
-                </div>
+<!-- Dialogue Transcript Output -->
+<div class="panel-card p-6 space-y-4">
+<div class="flex items-center justify-between border-b border-brand-800 pb-3">
+<h3 class="text-sm font-semibold text-slate-200">Transcript</h3>
+<div id="audioPlayerContainer" class="hidden flex items-center gap-3 bg-brand-900 px-3 py-1.5 rounded-lg border border-brand-800">
+<span class="text-xs font-mono text-slate-400">Audio:</span>
+<audio id="ttsAudioPlayer" controls class="h-6 max-w-xs"></audio>
+</div>
+</div>
 
-                <div id="debateTranscript" class="min-h-[180px] bg-brand-900/40 p-6 rounded-lg border border-brand-800 font-sans text-xs sm:text-sm leading-relaxed space-y-3 text-slate-300">
-                    <p class="text-xs text-slate-500 italic text-center py-6">
-                        Select debaters and click "Generate Dialogue Script" to begin.
-                    </p>
-                </div>
-            </div>
-        </section>
+<div id="debateTranscript" class="min-h-[180px] bg-brand-900/40 p-6 rounded-lg border border-brand-800 font-sans text-xs sm:text-sm leading-relaxed space-y-3 text-slate-300">
+<p class="text-xs text-slate-500 italic text-center py-6">
+Select debaters and click "Generate Dialogue Script" to begin.
+</p>
+</div>
+</div>
+</section>
 
-        <!-- VIEW 6: VISUAL STUDIO -->
-        <section id="view-vision" class="page-view space-y-8 hidden">
-            <div class="panel-card p-6">
-                <h2 class="text-xl font-semibold text-slate-100">Theorem & Historical Visual Studio</h2>
-                <p class="text-xs text-slate-400 mt-1">Render artwork, chalkboard proofs, and geometric visualizations.</p>
-            </div>
+<!-- VIEW 6: VISUAL STUDIO -->
+<section id="view-vision" class="page-view space-y-8 hidden">
+<div class="panel-card p-6">
+<h2 class="text-xl font-semibold text-slate-100">Theorem & Historical Visual Studio</h2>
+<p class="text-xs text-slate-400 mt-1">Render artwork, chalkboard proofs, and geometric visualizations.</p>
+</div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="panel-card p-6 space-y-4 lg:col-span-1">
-                    <h3 class="font-mono text-xs uppercase text-slate-400">Rendering Parameters</h3>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="panel-card p-6 space-y-4 lg:col-span-1">
+<h3 class="font-mono text-xs uppercase text-slate-400">Rendering Parameters</h3>
 
-                    <div>
-                        <label class="block text-xs font-medium text-slate-300 mb-1.5">Subject</label>
-                        <select id="artTitan" class="w-full bg-brand-900 text-slate-100 border border-brand-800 rounded-lg p-2.5 text-xs font-medium focus:outline-none">
-                            <option value="Srinivasa Ramanujan calculating infinite series on a slate in Kumbakonam">Srinivasa Ramanujan & Infinite Series</option>
-                            <option value="Leonhard Euler drawing topological graphs and Euler identity on paper">Leonhard Euler & Graph Theory</option>
-                            <option value="Pythagoras demonstrating geometric right triangle triples in ancient Greece">Pythagoras & Right Triangles</option>
-                            <option value="Gottfried Leibniz illustrating binary arithmetic and calculus dx dy">Gottfried Leibniz & Binary Calculus</option>
-                            <option value="Euclid drafting geometric elements with compass and straightedge">Euclid & Classical Geometry</option>
-                        </select>
-                    </div>
+<div>
+<label class="block text-xs font-medium text-slate-300 mb-1.5">Subject</label>
+<select id="artTitan" class="w-full bg-brand-900 text-slate-100 border border-brand-800 rounded-lg p-2.5 text-xs font-medium focus:outline-none">
+<option value="Srinivasa Ramanujan calculating infinite series on a slate in Kumbakonam">Srinivasa Ramanujan & Infinite Series</option>
+<option value="Leonhard Euler drawing topological graphs and Euler identity on paper">Leonhard Euler & Graph Theory</option>
+<option value="Pythagoras demonstrating geometric right triangle triples in ancient Greece">Pythagoras & Right Triangles</option>
+<option value="Gottfried Leibniz illustrating binary arithmetic and calculus dx dy">Gottfried Leibniz & Binary Calculus</option>
+<option value="Euclid drafting geometric elements with compass and straightedge">Euclid & Classical Geometry</option>
+</select>
+</div>
 
-                    <div>
-                        <label class="block text-xs font-medium text-slate-300 mb-1.5">Aesthetic Style</label>
-                        <select id="artStyle" class="w-full bg-brand-900 text-slate-100 border border-brand-800 rounded-lg p-2.5 text-xs font-medium focus:outline-none">
-                            <option value="Detailed chalkboard sketch with chalk formulas and clean geometric diagrams">Chalkboard Technical Diagram</option>
-                            <option value="Minimalist vector illustration with crisp geometric lines">Minimalist Editorial Vector</option>
-                            <option value="Classical historical oil portrait with subtle atmospheric studio light">Classical Historical Portrait</option>
-                        </select>
-                    </div>
+<div>
+<label class="block text-xs font-medium text-slate-300 mb-1.5">Aesthetic Style</label>
+<select id="artStyle" class="w-full bg-brand-900 text-slate-100 border border-brand-800 rounded-lg p-2.5 text-xs font-medium focus:outline-none">
+<option value="Detailed chalkboard sketch with chalk formulas and clean geometric diagrams">Chalkboard Technical Diagram</option>
+<option value="Minimalist vector illustration with crisp geometric lines">Minimalist Editorial Vector</option>
+<option value="Classical historical oil portrait with subtle atmospheric studio light">Classical Historical Portrait</option>
+</select>
+</div>
 
-                    <div>
-                        <label class="block text-xs font-medium text-slate-300 mb-1.5">Custom Overlay Prompt</label>
-                        <textarea id="artCustomPrompt" rows="3" placeholder="Additional aesthetic context..." class="w-full bg-brand-900 text-slate-100 placeholder-slate-500 border border-brand-800 rounded-lg p-2.5 text-xs focus:outline-none focus:border-slate-600"></textarea>
-                    </div>
+<div>
+<label class="block text-xs font-medium text-slate-300 mb-1.5">Custom Overlay Prompt</label>
+<textarea id="artCustomPrompt" rows="3" placeholder="Additional aesthetic context..." class="w-full bg-brand-900 text-slate-100 placeholder-slate-500 border border-brand-800 rounded-lg p-2.5 text-xs focus:outline-none focus:border-slate-600"></textarea>
+</div>
 
-                    <button onclick="generateAIArtwork()" id="generateArtBtn" class="w-full py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center justify-center gap-2">
-                        <span>Generate Image / Gemini</span>
-                    </button>
-                </div>
+<button onclick="generateAIArtwork()" id="generateArtBtn" class="w-full py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center justify-center gap-2">
+                        <span>Generate Image</span>
+                        <span>Generate Image / Search</span>
+</button>
+</div>
 
-                <div class="panel-card p-6 lg:col-span-2 flex flex-col items-center justify-center min-h-[400px] text-center border border-brand-800 relative">
-                    <div id="artPlaceholder" class="space-y-2 p-8">
-                        <div class="w-12 h-12 rounded-lg bg-brand-900 border border-brand-800 text-slate-400 flex items-center justify-center mx-auto text-lg">
-                            <i class="fa-regular fa-image"></i>
-                        </div>
-                        <h4 class="font-medium text-sm text-slate-300">Image Display Canvas</h4>
-                        <p class="text-xs text-slate-500 max-w-sm">
-                            Select parameters to render technical diagrams and historical illustrations.
-                        </p>
-                    </div>
+<div class="panel-card p-6 lg:col-span-2 flex flex-col items-center justify-center min-h-[400px] text-center border border-brand-800 relative">
+<div id="artPlaceholder" class="space-y-2 p-8">
+<div class="w-12 h-12 rounded-lg bg-brand-900 border border-brand-800 text-slate-400 flex items-center justify-center mx-auto text-lg">
+<i class="fa-regular fa-image"></i>
+</div>
+<h4 class="font-medium text-sm text-slate-300">Image Display Canvas</h4>
+<p class="text-xs text-slate-500 max-w-sm">
+Select parameters to render technical diagrams and historical illustrations.
+</p>
+</div>
 
-                    <div id="artLoading" class="hidden space-y-3">
-                        <div class="inline-block animate-spin rounded-full h-8 w-8 border-2 border-slate-300 border-t-transparent"></div>
-                        <p class="text-xs font-mono text-slate-400">Rendering visual canvas...</p>
-                    </div>
+<div id="artLoading" class="hidden space-y-3">
+<div class="inline-block animate-spin rounded-full h-8 w-8 border-2 border-slate-300 border-t-transparent"></div>
+<p class="text-xs font-mono text-slate-400">Rendering visual canvas...</p>
+</div>
 
-                    <img id="artOutputImg" class="hidden w-full max-h-[480px] object-contain rounded-lg border border-brand-800">
-                </div>
-            </div>
-        </section>
+<img id="artOutputImg" class="hidden w-full max-h-[480px] object-contain rounded-lg border border-brand-800">
+</div>
+</div>
+</section>
 
-        <!-- VIEW 7: FORMULA SANDBOX -->
-        <section id="view-sandbox" class="page-view space-y-8 hidden">
-            <div class="panel-card p-6">
-                <h2 class="text-xl font-semibold text-slate-100">Formula & Theorem Sandbox</h2>
-                <p class="text-xs text-slate-400 mt-1">Interactive modules exploring fundamental equations that drive lifelong search volume.</p>
-            </div>
+<!-- VIEW 7: FORMULA SANDBOX -->
+<section id="view-sandbox" class="page-view space-y-8 hidden">
+<div class="panel-card p-6">
+<h2 class="text-xl font-semibold text-slate-100">Formula & Theorem Sandbox</h2>
+<p class="text-xs text-slate-400 mt-1">Interactive modules exploring fundamental equations that drive lifelong search volume.</p>
+</div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Pythagoras Sandbox -->
-                <div class="panel-card p-6 space-y-4">
-                    <div class="flex items-center justify-between border-b border-brand-800 pb-3">
-                        <span class="text-xs font-mono text-slate-400">Pythagorean Theorem</span>
-                        <span class="font-mono text-xs text-slate-300">a² + b² = c²</span>
-                    </div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Pythagoras Sandbox -->
+<div class="panel-card p-6 space-y-4">
+<div class="flex items-center justify-between border-b border-brand-800 pb-3">
+<span class="text-xs font-mono text-slate-400">Pythagorean Theorem</span>
+<span class="font-mono text-xs text-slate-300">a² + b² = c²</span>
+</div>
 
-                    <div class="space-y-4 bg-brand-900 p-4 rounded-lg border border-brand-800">
-                        <div>
-                            <div class="flex justify-between text-xs font-mono mb-1">
-                                <span>Side a: <b id="valA" class="text-slate-200">3</b></span>
-                            </div>
-                            <input type="range" id="sliderA" min="1" max="25" value="3" oninput="calcPythagoras()" class="w-full accent-slate-300">
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs font-mono mb-1">
-                                <span>Side b: <b id="valB" class="text-slate-200">4</b></span>
-                            </div>
-                            <input type="range" id="sliderB" min="1" max="25" value="4" oninput="calcPythagoras()" class="w-full accent-slate-300">
-                        </div>
-                    </div>
+<div class="space-y-4 bg-brand-900 p-4 rounded-lg border border-brand-800">
+<div>
+<div class="flex justify-between text-xs font-mono mb-1">
+<span>Side a: <b id="valA" class="text-slate-200">3</b></span>
+</div>
+<input type="range" id="sliderA" min="1" max="25" value="3" oninput="calcPythagoras()" class="w-full accent-slate-300">
+</div>
+<div>
+<div class="flex justify-between text-xs font-mono mb-1">
+<span>Side b: <b id="valB" class="text-slate-200">4</b></span>
+</div>
+<input type="range" id="sliderB" min="1" max="25" value="4" oninput="calcPythagoras()" class="w-full accent-slate-300">
+</div>
+</div>
 
-                    <div class="p-3 bg-brand-900 rounded-lg border border-brand-800 text-center font-mono">
-                        <span class="text-xs text-slate-400">Hypotenuse (c) = </span>
-                        <span id="resultC" class="text-base font-bold text-slate-100">5.00</span>
-                    </div>
+<div class="p-3 bg-brand-900 rounded-lg border border-brand-800 text-center font-mono">
+<span class="text-xs text-slate-400">Hypotenuse (c) = </span>
+<span id="resultC" class="text-base font-bold text-slate-100">5.00</span>
+</div>
 
+                    <button onclick="askAIFormula('Pythagorean Theorem', 'a^2 + b^2 = c^2')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition">
+                        Inquire in Assistant Chat
                     <button onclick="askAIFormula('Pythagorean Theorem', 'a^2 + b^2 = c^2')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
-                        <span>Inquire with Gemini</span>
+                        <span>Inquire in Assistant / Google</span>
                         <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </button>
-                </div>
+</button>
+</div>
 
-                <!-- Ramanujan Taxicab 1729 -->
-                <div class="panel-card p-6 space-y-4">
-                    <div class="flex items-center justify-between border-b border-brand-800 pb-3">
-                        <span class="text-xs font-mono text-slate-400">Hardy-Ramanujan Number</span>
-                        <span class="font-mono text-xs text-slate-300">Taxicab 1729</span>
-                    </div>
+<!-- Ramanujan Taxicab 1729 -->
+<div class="panel-card p-6 space-y-4">
+<div class="flex items-center justify-between border-b border-brand-800 pb-3">
+<span class="text-xs font-mono text-slate-400">Hardy-Ramanujan Number</span>
+<span class="font-mono text-xs text-slate-300">Taxicab 1729</span>
+</div>
 
-                    <div class="space-y-2 bg-brand-900 p-4 rounded-lg border border-brand-800 font-mono text-xs">
-                        <div class="p-2.5 bg-brand-800/80 rounded text-center border border-brand-700">
-                            1³ + 12³ = 1 + 1728 = <b class="text-slate-100">1729</b>
-                        </div>
-                        <div class="p-2.5 bg-brand-800/80 rounded text-center border border-brand-700">
-                            9³ + 10³ = 729 + 1000 = <b class="text-slate-100">1729</b>
-                        </div>
-                    </div>
+<div class="space-y-2 bg-brand-900 p-4 rounded-lg border border-brand-800 font-mono text-xs">
+<div class="p-2.5 bg-brand-800/80 rounded text-center border border-brand-700">
+1³ + 12³ = 1 + 1728 = <b class="text-slate-100">1729</b>
+</div>
+<div class="p-2.5 bg-brand-800/80 rounded text-center border border-brand-700">
+9³ + 10³ = 729 + 1000 = <b class="text-slate-100">1729</b>
+</div>
+</div>
 
+                    <button onclick="askAIFormula('Hardy-Ramanujan 1729', '1^3 + 12^3 = 9^3 + 10^3 = 1729')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition">
+                        Inquire in Assistant Chat
                     <button onclick="askAIFormula('Hardy-Ramanujan 1729', '1^3 + 12^3 = 9^3 + 10^3 = 1729')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
-                        <span>Inquire with Gemini</span>
+                        <span>Inquire in Assistant / Google</span>
                         <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </button>
-                </div>
+</button>
+</div>
 
-                <!-- Euler's Identity -->
-                <div class="panel-card p-6 space-y-4">
-                    <div class="flex items-center justify-between border-b border-brand-800 pb-3">
-                        <span class="text-xs font-mono text-slate-400">Euler's Identity</span>
-                        <span class="font-mono text-xs text-slate-300">e^(iπ) + 1 = 0</span>
-                    </div>
+<!-- Euler's Identity -->
+<div class="panel-card p-6 space-y-4">
+<div class="flex items-center justify-between border-b border-brand-800 pb-3">
+<span class="text-xs font-mono text-slate-400">Euler's Identity</span>
+<span class="font-mono text-xs text-slate-300">e^(iπ) + 1 = 0</span>
+</div>
 
-                    <div class="p-6 bg-brand-900 rounded-lg border border-brand-800 text-center font-mono">
-                        <span class="text-xl font-bold text-slate-100">e<sup>iπ</sup> + 1 = 0</span>
-                    </div>
+<div class="p-6 bg-brand-900 rounded-lg border border-brand-800 text-center font-mono">
+<span class="text-xl font-bold text-slate-100">e<sup>iπ</sup> + 1 = 0</span>
+</div>
 
+                    <button onclick="askAIFormula('Euler Identity', 'e^(i*pi) + 1 = 0')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition">
+                        Inquire in Assistant Chat
                     <button onclick="askAIFormula('Euler Identity', 'e^(i*pi) + 1 = 0')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
-                        <span>Inquire with Gemini</span>
+                        <span>Inquire in Assistant / Google</span>
                         <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </button>
-                </div>
+</button>
+</div>
 
-                <!-- Euclid GCD -->
-                <div class="panel-card p-6 space-y-4">
-                    <div class="flex items-center justify-between border-b border-brand-800 pb-3">
-                        <span class="text-xs font-mono text-slate-400">Euclidean GCD Algorithm</span>
-                        <span class="font-mono text-xs text-slate-300">gcd(a, b)</span>
-                    </div>
+<!-- Euclid GCD -->
+<div class="panel-card p-6 space-y-4">
+<div class="flex items-center justify-between border-b border-brand-800 pb-3">
+<span class="text-xs font-mono text-slate-400">Euclidean GCD Algorithm</span>
+<span class="font-mono text-xs text-slate-300">gcd(a, b)</span>
+</div>
 
-                    <div class="flex gap-3">
-                        <input type="number" id="gcdNum1" value="252" class="w-1/2 p-2 bg-brand-900 border border-brand-800 rounded text-xs font-mono text-slate-100">
-                        <input type="number" id="gcdNum2" value="105" class="w-1/2 p-2 bg-brand-900 border border-brand-800 rounded text-xs font-mono text-slate-100">
-                    </div>
-                    <button onclick="calcGCD()" class="w-full py-2 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition">
-                        Compute GCD
-                    </button>
-                    <div id="gcdOutput" class="p-2.5 bg-brand-900 rounded font-mono text-xs text-center text-slate-200 border border-brand-800">
-                        GCD(252, 105) = 21
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="flex gap-3">
+<input type="number" id="gcdNum1" value="252" class="w-1/2 p-2 bg-brand-900 border border-brand-800 rounded text-xs font-mono text-slate-100">
+<input type="number" id="gcdNum2" value="105" class="w-1/2 p-2 bg-brand-900 border border-brand-800 rounded text-xs font-mono text-slate-100">
+</div>
+<button onclick="calcGCD()" class="w-full py-2 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition">
+Compute GCD
+</button>
+<div id="gcdOutput" class="p-2.5 bg-brand-900 rounded font-mono text-xs text-center text-slate-200 border border-brand-800">
+GCD(252, 105) = 21
+</div>
+</div>
+</div>
+</section>
 
-    </main>
+</main>
 
-    <!-- Footer -->
-    <footer class="mt-16 border-t border-brand-800/80 py-8 text-center text-xs text-slate-500 bg-brand-950">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>Math Legacy Index • Search Volume, Proofs & Cultural Impact</p>
-            <p class="font-mono text-[11px] text-slate-600">Updated for 2026</p>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer class="mt-16 border-t border-brand-800/80 py-8 text-center text-xs text-slate-500 bg-brand-950">
+<div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<p>Math Legacy Index • Search Volume, Proofs & Cultural Impact</p>
+<p class="font-mono text-[11px] text-slate-600">Updated for 2026</p>
+</div>
+</footer>
 
-    <script>
-        // Optional API Key for live AI responses
-        let API_KEY = "";
+<script>
+        // Optional API Key for live AI responses (If left empty, searches seamlessly redirect to Google Search)
+        const API_KEY = "AIzaSyCmtOa8Bkyma5UiDzlgnRC6Zr8z1Se5s7o";
 
-        function getActiveApiKey() {
-            const storedKey = localStorage.getItem('gemini_api_key');
-            if (storedKey && storedKey.trim().length > 0) return storedKey.trim();
-            return API_KEY;
-        }
+// Data Store with exact structured dossier attributes
+const titandata = {
+euclid: {
+id: '/m/02k02',
+name: 'Euclid of Alexandria',
+shortName: 'Euclid',
+era: 'c. 300 BC (Classical Greece)',
+quote: '“There is no royal road to geometry.”',
+field: 'Geometry, Number Theory & Logic',
+keyDiscovery: 'Elements (Axiomatic Geometry), Euclidean Algorithm (GCD)',
+spikeReason: 'Elementary & high school geometry curriculum cycles globally in autumn and spring.',
+wwScore: 42,
+inScore: 38
+},
+pythagoras: {
+id: '/m/05sr0',
+name: 'Pythagoras of Samos',
+shortName: 'Pythagoras',
+era: 'c. 570 – 495 BC (Ancient Greece)',
+quote: '“Number is the ruler of forms and ideas.”',
+field: 'Geometry, Metaphysics, Music Ratios',
+keyDiscovery: 'Pythagorean Theorem (a² + b² = c²), Musical Harmonics',
+spikeReason: 'Massive global search volume driven by basic school math homework and exams year-round.',
+wwScore: 78,
+inScore: 68
+},
+leibniz: {
+id: '/m/0372p',
+name: 'Gottfried Wilhelm Leibniz',
+shortName: 'Leibniz',
+era: '1646 – 1716 (Germany / Holy Roman Empire)',
+quote: '“Music is the pleasure the human mind experiences from counting without being aware that it is counting.”',
+field: 'Infinitesimal Calculus, Logic, Binary Arithmetic',
+keyDiscovery: 'Calculus Notation (dy/dx), Modern Binary Number System (0,1)',
+spikeReason: 'Undergraduate AP Calculus exam periods in universities worldwide.',
+wwScore: 28,
+inScore: 22
+},
+euler: {
+id: '/m/04jzj',
+name: 'Leonhard Euler',
+shortName: 'Euler',
+era: '1707 – 1783 (Switzerland / St. Petersburg)',
+quote: '“For since the fabric of the universe is the most perfect... nothing at all takes place in the universe in which some rule of maximum or minimum does not appear.”',
+field: 'Mathematical Analysis, Graph Theory, Topology',
+keyDiscovery: 'Euler\'s Identity (e^(iπ)+1=0), Graph Theory (7 Bridges), Euler\'s e',
+spikeReason: 'STEM, computer science, and engineering course enrollment peaks globally.',
+wwScore: 55,
+inScore: 45
+},
+ramanujan: {
+id: '/m/0cty0',
+name: 'Srinivasa Ramanujan',
+shortName: 'Ramanujan',
+era: '1887 – 1920 (India / Cambridge UK)',
+quote: '“An equation for me has no meaning unless it expresses a thought of God.”',
+field: 'Infinite Series, Number Theory, Continued Fractions',
+keyDiscovery: 'Taxicab Number (1729), Mock Theta Functions, Ramanujan Constant',
+spikeReason: 'Huge annual surge in India on Dec 22 (National Math Day) & pop culture movie interest.',
+wwScore: 36,
+inScore: 92
+}
+};
 
-        function isApiKeyValid() {
-            const key = getActiveApiKey();
-            return key && key.trim() !== "" && !key.includes("AIzaSyCmtOa8Bkyma5UiDzlgnRC6Zr8z1Se5s7o");
-        }
+let currentGeo = 'worldwide';
+let currentDebateText = "";
 
-        function toggleApiKeyModal() {
-            const modal = document.getElementById('apiKeyModal');
-            if (modal) modal.classList.toggle('hidden');
-            const input = document.getElementById('userApiKeyInput');
-            if (input) input.value = localStorage.getItem('gemini_api_key') || '';
-        }
+// Navigation Router with fade-in effect
+function navigateTo(viewId) {
+document.querySelectorAll('.page-view').forEach(view => view.classList.add('hidden'));
 
-        function saveUserApiKey() {
-            const val = document.getElementById('userApiKeyInput').value.trim();
-            if (val) {
-                localStorage.setItem('gemini_api_key', val);
-            } else {
-                localStorage.removeItem('gemini_api_key');
-            }
-            updateApiKeyBtnText();
-            toggleApiKeyModal();
-        }
+const target = document.getElementById(`view-${viewId}`);
+if (target) {
+target.classList.remove('hidden');
+}
 
-        function clearUserApiKey() {
-            localStorage.removeItem('gemini_api_key');
-            document.getElementById('userApiKeyInput').value = '';
-            updateApiKeyBtnText();
-            toggleApiKeyModal();
-        }
+document.querySelectorAll('.nav-btn').forEach(btn => {
+btn.className = "nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200";
+});
 
-        function updateApiKeyBtnText() {
-            const btnText = document.getElementById('apiKeyBtnText');
-            if (btnText) {
-                if (isApiKeyValid()) {
-                    btnText.innerText = "Gemini Key Saved";
-                } else {
-                    btnText.innerText = "Set Gemini Key";
-                }
-            }
-        }
+const activeBtn = document.getElementById(`nav-${viewId}`);
+if (activeBtn) {
+activeBtn.className = "nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-100 bg-brand-800";
+}
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
+window.scrollTo({ top: 0, behavior: 'smooth' });
 
-        function renderHomeCards() {
-            const grid = document.getElementById('homeMathematicianGrid');
-            grid.innerHTML = Object.keys(titandata).map(key => {
-                const item = titandata[key];
-                return `
-                    <div class="panel-card p-6 flex flex-col justify-between space-y-4">
-                        <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <h4 class="font-semibold text-base text-slate-100">${item.shortName}</h4>
-                                <span class="text-[10px] font-mono text-slate-400 bg-brand-900 px-2 py-0.5 rounded border border-brand-800">${item.id}</span>
-                            </div>
-                            <p class="text-xs text-slate-400 italic mb-3 font-serif">${item.quote}</p>
-                            <div class="text-xs space-y-1">
-                                <span class="text-[10px] text-slate-500 font-mono uppercase">Field of Mastery</span>
-                                <p class="text-slate-300 font-medium">${item.field}</p>
-                            </div>
-                        </div>
+if (viewId === 'trends') {
+renderGoogleTrendsEmbed();
+renderH2H();
+}
+}
 
-                        <div class="pt-3 border-t border-brand-800 flex items-center justify-between">
-                            <button onclick="navigateTo('dossiers')" class="text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1">
-                                Read Dossier <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </button>
-                            <span class="text-xs font-mono text-slate-500">Index Score: ${item.wwScore}</span>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
+function toggleMobileMenu() {
+const menu = document.getElementById('mobileMenu');
+menu.classList.toggle('hidden');
+}
 
-        function renderDossierCards() {
-            const container = document.getElementById('dossierCardsContainer');
-            container.innerHTML = Object.keys(titandata).map(key => {
-                const item = titandata[key];
-                return `
-                    <div class="panel-card p-6 flex flex-col justify-between space-y-6">
-                        <div>
-                            <div class="flex items-center justify-between border-b border-brand-800 pb-3 mb-4">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-slate-100">${item.name}</h3>
-                                    <span class="text-xs text-slate-400">${item.era}</span>
-                                </div>
-                                <span class="text-[10px] font-mono text-slate-500 bg-brand-900 px-2 py-0.5 rounded border border-brand-800">${item.id}</span>
-                            </div>
+function renderHomeCards() {
+const grid = document.getElementById('homeMathematicianGrid');
+grid.innerHTML = Object.keys(titandata).map(key => {
+const item = titandata[key];
+return `
+                   <div class="panel-card p-6 flex flex-col justify-between space-y-4">
+                       <div>
+                           <div class="flex items-center justify-between mb-2">
+                               <h4 class="font-semibold text-base text-slate-100">${item.shortName}</h4>
+                               <span class="text-[10px] font-mono text-slate-400 bg-brand-900 px-2 py-0.5 rounded border border-brand-800">${item.id}</span>
+                           </div>
+                           <p class="text-xs text-slate-400 italic mb-3 font-serif">${item.quote}</p>
+                           <div class="text-xs space-y-1">
+                               <span class="text-[10px] text-slate-500 font-mono uppercase">Field of Mastery</span>
+                               <p class="text-slate-300 font-medium">${item.field}</p>
+                           </div>
+                       </div>
 
-                            <p class="text-xs text-slate-300 italic font-serif bg-brand-900/60 p-3 rounded-lg border border-brand-800 mb-4">
-                                ${item.quote}
-                            </p>
+                       <div class="pt-3 border-t border-brand-800 flex items-center justify-between">
+                           <button onclick="navigateTo('dossiers')" class="text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1">
+                               Read Dossier <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                           </button>
+                           <span class="text-xs font-mono text-slate-500">Index Score: ${item.wwScore}</span>
+                       </div>
+                   </div>
+               `;
+}).join('');
+}
 
-                            <div class="space-y-3 text-xs">
-                                <div>
-                                    <span class="text-[10px] font-mono uppercase text-slate-500 block">Field of Mastery</span>
-                                    <p class="font-medium text-slate-200 mt-0.5">${item.field}</p>
-                                </div>
+function renderDossierCards() {
+const container = document.getElementById('dossierCardsContainer');
+container.innerHTML = Object.keys(titandata).map(key => {
+const item = titandata[key];
+return `
+                   <div class="panel-card p-6 flex flex-col justify-between space-y-6">
+                       <div>
+                           <div class="flex items-center justify-between border-b border-brand-800 pb-3 mb-4">
+                               <div>
+                                   <h3 class="text-lg font-semibold text-slate-100">${item.name}</h3>
+                                   <span class="text-xs text-slate-400">${item.era}</span>
+                               </div>
+                               <span class="text-[10px] font-mono text-slate-500 bg-brand-900 px-2 py-0.5 rounded border border-brand-800">${item.id}</span>
+                           </div>
 
-                                <div>
-                                    <span class="text-[10px] font-mono uppercase text-slate-500 block">Core Legacy Contribution</span>
-                                    <p class="font-medium text-slate-200 mt-0.5">${item.keyDiscovery}</p>
-                                </div>
-                            </div>
-                        </div>
+                           <p class="text-xs text-slate-300 italic font-serif bg-brand-900/60 p-3 rounded-lg border border-brand-800 mb-4">
+                               ${item.quote}
+                           </p>
 
-                        <div class="pt-3 border-t border-brand-800">
-                            <span class="text-[10px] font-mono text-slate-400 uppercase block mb-1">Why Search Spikes Occur</span>
-                            <p class="text-xs text-slate-400 leading-relaxed">${item.spikeReason}</p>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
+                           <div class="space-y-3 text-xs">
+                               <div>
+                                   <span class="text-[10px] font-mono uppercase text-slate-500 block">Field of Mastery</span>
+                                   <p class="font-medium text-slate-200 mt-0.5">${item.field}</p>
+                               </div>
 
-        function renderH2H() {
-            const keyA = document.getElementById('h2hA').value;
-            const keyB = document.getElementById('h2hB').value;
-            const container = document.getElementById('h2hTableContainer');
+                               <div>
+                                   <span class="text-[10px] font-mono uppercase text-slate-500 block">Core Legacy Contribution</span>
+                                   <p class="font-medium text-slate-200 mt-0.5">${item.keyDiscovery}</p>
+                               </div>
+                           </div>
+                       </div>
 
-            const itemA = titandata[keyA];
-            const itemB = titandata[keyB];
+                       <div class="pt-3 border-t border-brand-800">
+                           <span class="text-[10px] font-mono text-slate-400 uppercase block mb-1">Why Search Spikes Occur</span>
+                           <p class="text-xs text-slate-400 leading-relaxed">${item.spikeReason}</p>
+                       </div>
+                   </div>
+               `;
+}).join('');
+}
 
-            container.innerHTML = `
-                <table class="w-full text-left text-xs border-collapse mt-2">
-                    <thead>
-                        <tr class="border-b border-brand-800 text-slate-400 font-mono text-[11px] uppercase">
-                            <th class="p-3">Attribute</th>
-                            <th class="p-3 font-semibold text-slate-200">${itemA.name}</th>
-                            <th class="p-3 font-semibold text-slate-200">${itemB.name}</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-brand-800/60">
-                        <tr>
-                            <td class="p-3 text-slate-400 font-mono text-[11px]">Timeline / Era</td>
-                            <td class="p-3 font-medium text-slate-300">${itemA.era}</td>
-                            <td class="p-3 font-medium text-slate-300">${itemB.era}</td>
-                        </tr>
-                        <tr>
-                            <td class="p-3 text-slate-400 font-mono text-[11px]">Relative Index (${currentGeo.toUpperCase()})</td>
-                            <td class="p-3 font-semibold text-slate-100">${currentGeo === 'india' ? itemA.inScore : itemA.wwScore} / 100</td>
-                            <td class="p-3 font-semibold text-slate-100">${currentGeo === 'india' ? itemB.inScore : itemB.wwScore} / 100</td>
-                        </tr>
-                        <tr>
-                            <td class="p-3 text-slate-400 font-mono text-[11px]">Field of Mastery</td>
-                            <td class="p-3 text-slate-300">${itemA.field}</td>
-                            <td class="p-3 text-slate-300">${itemB.field}</td>
-                        </tr>
-                        <tr>
-                            <td class="p-3 text-slate-400 font-mono text-[11px]">Why Search Spikes Occur</td>
-                            <td class="p-3 text-slate-400">${itemA.spikeReason}</td>
-                            <td class="p-3 text-slate-400">${itemB.spikeReason}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            `;
-        }
+function renderH2H() {
+const keyA = document.getElementById('h2hA').value;
+const keyB = document.getElementById('h2hB').value;
+const container = document.getElementById('h2hTableContainer');
 
-        // Google Trends Embed Generator
-        function renderGoogleTrendsEmbed() {
-            const timeTarget = document.getElementById('trendsTimeTarget');
-            if (!timeTarget) return;
+const itemA = titandata[keyA];
+const itemB = titandata[keyB];
 
-            timeTarget.innerHTML = '';
+container.innerHTML = `
+               <table class="w-full text-left text-xs border-collapse mt-2">
+                   <thead>
+                       <tr class="border-b border-brand-800 text-slate-400 font-mono text-[11px] uppercase">
+                           <th class="p-3">Attribute</th>
+                           <th class="p-3 font-semibold text-slate-200">${itemA.name}</th>
+                           <th class="p-3 font-semibold text-slate-200">${itemB.name}</th>
+                       </tr>
+                   </thead>
+                   <tbody class="divide-y divide-brand-800/60">
+                       <tr>
+                           <td class="p-3 text-slate-400 font-mono text-[11px]">Timeline / Era</td>
+                           <td class="p-3 font-medium text-slate-300">${itemA.era}</td>
+                           <td class="p-3 font-medium text-slate-300">${itemB.era}</td>
+                       </tr>
+                       <tr>
+                           <td class="p-3 text-slate-400 font-mono text-[11px]">Relative Index (${currentGeo.toUpperCase()})</td>
+                           <td class="p-3 font-semibold text-slate-100">${currentGeo === 'india' ? itemA.inScore : itemA.wwScore} / 100</td>
+                           <td class="p-3 font-semibold text-slate-100">${currentGeo === 'india' ? itemB.inScore : itemB.wwScore} / 100</td>
+                       </tr>
+                       <tr>
+                           <td class="p-3 text-slate-400 font-mono text-[11px]">Field of Mastery</td>
+                           <td class="p-3 text-slate-300">${itemA.field}</td>
+                           <td class="p-3 text-slate-300">${itemB.field}</td>
+                       </tr>
+                       <tr>
+                           <td class="p-3 text-slate-400 font-mono text-[11px]">Why Search Spikes Occur</td>
+                           <td class="p-3 text-slate-400">${itemA.spikeReason}</td>
+                           <td class="p-3 text-slate-400">${itemB.spikeReason}</td>
+                       </tr>
+                   </tbody>
+               </table>
+           `;
+}
 
-            const comparisonArray = [
-                { keyword: "/m/02k02", geo: currentGeo === 'india' ? "IN" : "", time: "all" },
-                { keyword: "/m/05sr0", geo: currentGeo === 'india' ? "IN" : "", time: "all" },
-                { keyword: "/m/0372p", geo: currentGeo === 'india' ? "IN" : "", time: "all" },
-                { keyword: "/m/04jzj", geo: currentGeo === 'india' ? "IN" : "", time: "all" },
-                { keyword: "/m/0cty0", geo: currentGeo === 'india' ? "IN" : "", time: "all" }
-            ];
+// Google Trends Embed Generator
+function renderGoogleTrendsEmbed() {
+const timeTarget = document.getElementById('trendsTimeTarget');
+if (!timeTarget) return;
 
-            if (window.trends && window.trends.embed) {
-                try {
-                    window.trends.embed.renderExploreWidgetTo(
-                        timeTarget,
-                        "TIMESERIES",
-                        { comparisonItem: comparisonArray, category: 0, property: "" },
-                        { exploreQuery: `date=all&geo=${currentGeo === 'india' ? 'IN' : ''}&q=%2Fm%2F02k02,%2Fm%2F05sr0,%2Fm%2F0372p,%2Fm%2F04jzj,%2Fm%2F0cty0`, guestPath: "https://trends.google.com:443/trends/embed/" }
-                    );
-                } catch (e) { console.log(e); }
-            }
-        }
+timeTarget.innerHTML = '';
 
-        function switchGeo(geo) {
-            currentGeo = geo;
-            const btnWW = document.getElementById('scopeWorldwideBtn');
-            const btnIN = document.getElementById('scopeIndiaBtn');
+const comparisonArray = [
+{ keyword: "/m/02k02", geo: currentGeo === 'india' ? "IN" : "", time: "all" },
+{ keyword: "/m/05sr0", geo: currentGeo === 'india' ? "IN" : "", time: "all" },
+{ keyword: "/m/0372p", geo: currentGeo === 'india' ? "IN" : "", time: "all" },
+{ keyword: "/m/04jzj", geo: currentGeo === 'india' ? "IN" : "", time: "all" },
+{ keyword: "/m/0cty0", geo: currentGeo === 'india' ? "IN" : "", time: "all" }
+];
 
-            if (geo === 'worldwide') {
-                btnWW.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition bg-brand-800 text-slate-100";
-                btnIN.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition text-slate-400 hover:text-slate-200";
-            } else {
-                btnIN.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition bg-brand-800 text-slate-100";
-                btnWW.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition text-slate-400 hover:text-slate-200";
-            }
+if (window.trends && window.trends.embed) {
+try {
+window.trends.embed.renderExploreWidgetTo(
+timeTarget,
+"TIMESERIES",
+{ comparisonItem: comparisonArray, category: 0, property: "" },
+{ exploreQuery: `date=all&geo=${currentGeo === 'india' ? 'IN' : ''}&q=%2Fm%2F02k02,%2Fm%2F05sr0,%2Fm%2F0372p,%2Fm%2F04jzj,%2Fm%2F0cty0`, guestPath: "https://trends.google.com:443/trends/embed/" }
+);
+} catch (e) { console.log(e); }
+}
+}
 
-            renderGoogleTrendsEmbed();
-            renderH2H();
-        }
+function switchGeo(geo) {
+currentGeo = geo;
+const btnWW = document.getElementById('scopeWorldwideBtn');
+const btnIN = document.getElementById('scopeIndiaBtn');
 
-        async function fetchWithBackoff(url, options, maxRetries = 3) {
-            let delay = 1000;
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    const res = await fetch(url, options);
-                    if (res.ok) return res;
-                } catch (err) {
-                    if (i === maxRetries - 1) throw err;
-                }
-                await new Promise(r => setTimeout(r, delay));
-                delay *= 2;
-            }
-            return await fetch(url, options);
-        }
+if (geo === 'worldwide') {
+btnWW.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition bg-brand-800 text-slate-100";
+btnIN.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition text-slate-400 hover:text-slate-200";
+} else {
+btnIN.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition bg-brand-800 text-slate-100";
+btnWW.className = "flex-1 sm:flex-none px-4 py-2 text-xs font-medium rounded-md transition text-slate-400 hover:text-slate-200";
+}
 
+renderGoogleTrendsEmbed();
+renderH2H();
+}
+
+        const API_KEY = ""; // Provided automatically at runtime
+
+async function fetchWithBackoff(url, options, maxRetries = 3) {
+let delay = 1000;
+for (let i = 0; i < maxRetries; i++) {
+try {
+const res = await fetch(url, options);
+if (res.ok) return res;
+} catch (err) {
+if (i === maxRetries - 1) throw err;
+}
+await new Promise(r => setTimeout(r, delay));
+delay *= 2;
+}
+return await fetch(url, options);
+}
+
+        // Assistant Chat
         // Assistant Chat & Fallback Search
-        function setChatPrompt(promptText) {
-            document.getElementById('chatInput').value = promptText;
-            navigateTo('ai-chat');
-        }
+function setChatPrompt(promptText) {
+document.getElementById('chatInput').value = promptText;
+navigateTo('ai-chat');
+}
 
-        function askAIFormula(formulaName, formulaText) {
+function askAIFormula(formulaName, formulaText) {
+            setChatPrompt(`Provide a concise, clear breakdown of ${formulaName} (${formulaText}), its historical origin, and its modern mathematical significance.`);
             setChatPrompt(`Explain ${formulaName} (${formulaText}), its historical origin, and modern mathematical significance.`);
-        }
+}
 
-        async function handleChatSubmit(e) {
-            e.preventDefault();
-            const inputEl = document.getElementById('chatInput');
-            const userMsg = inputEl.value.trim();
-            if (!userMsg) return;
+async function handleChatSubmit(e) {
+e.preventDefault();
+const inputEl = document.getElementById('chatInput');
+const userMsg = inputEl.value.trim();
+if (!userMsg) return;
 
-            const useGrounding = document.getElementById('chatSearchGroundingToggle').checked;
-            const messagesContainer = document.getElementById('chatMessages');
+const useGrounding = document.getElementById('chatSearchGroundingToggle').checked;
+const messagesContainer = document.getElementById('chatMessages');
 
-            const userBubble = document.createElement('div');
-            userBubble.className = "flex items-start gap-3 bg-brand-900 p-4 rounded-xl border border-brand-800 max-w-2xl ml-auto justify-end";
-            userBubble.innerHTML = `
-                <div class="space-y-1 text-right">
-                    <span class="text-xs font-mono text-slate-400">You</span>
-                    <p class="text-xs text-slate-200">${escapeHtml(userMsg)}</p>
-                </div>
-            `;
-            messagesContainer.appendChild(userBubble);
-            inputEl.value = '';
+const userBubble = document.createElement('div');
+userBubble.className = "flex items-start gap-3 bg-brand-900 p-4 rounded-xl border border-brand-800 max-w-2xl ml-auto justify-end";
+userBubble.innerHTML = `
+               <div class="space-y-1 text-right">
+                   <span class="text-xs font-mono text-slate-400">You</span>
+                   <p class="text-xs text-slate-200">${escapeHtml(userMsg)}</p>
+               </div>
+           `;
+messagesContainer.appendChild(userBubble);
+inputEl.value = '';
 
-            const aiBubble = document.createElement('div');
-            aiBubble.className = "flex items-start gap-3 bg-brand-900/60 p-4 rounded-xl border border-brand-800 max-w-3xl";
+const aiBubble = document.createElement('div');
+aiBubble.className = "flex items-start gap-3 bg-brand-900/60 p-4 rounded-xl border border-brand-800 max-w-3xl";
 
-            // DIRECT GEMINI REDIRECT MODE (if no API Key is saved)
-            if (!isApiKeyValid()) {
-                const geminiUrl = `https://gemini.google.com/app`;
-                try {
-                    window.open(geminiUrl, '_blank');
-                } catch (err) {
-                    console.log('Popup prevented by browser:', err);
-                }
+            // DIRECT GOOGLE SEARCH REDIRECT MODE (if API_KEY is empty or missing)
+            if (!API_KEY || API_KEY.trim() === "") {
+                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userMsg)}`;
+                window.open(searchUrl, '_blank');
 
                 aiBubble.innerHTML = `
-                    <div class="w-7 h-7 rounded-md bg-purple-900/60 border border-purple-500/40 flex items-center justify-center text-purple-300 text-xs font-mono flex-shrink-0">
-                        <i class="fa-solid fa-sparkles text-xs"></i>
+                    <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xs font-mono flex-shrink-0">
+                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
                     </div>
                     <div class="space-y-2 flex-grow">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-semibold text-slate-200">Gemini Redirect</span>
-                            <span class="text-[10px] font-mono text-purple-300 bg-purple-900/50 px-2 py-0.5 rounded border border-purple-700/50">Gemini App</span>
-                        </div>
+                        <span class="text-xs font-semibold text-slate-300">Google Search Redirect</span>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            Opening Gemini for inquiry: <b class="text-slate-100">"${escapeHtml(userMsg)}"</b>
+                            Inquiry redirected to Google Search in a new tab:
                         </p>
-                        <p class="text-[11px] text-slate-400">Tip: Click "Set Gemini Key" in the top bar to get direct AI responses right inside this application.</p>
-                        <div class="pt-1">
-                            <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-medium transition">
-                                <span>Open Gemini App</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                            </a>
-                        </div>
+                        <a href="${searchUrl}" target="_blank" class="inline-flex items-center gap-2 text-xs font-medium text-sky-400 hover:text-sky-300 underline">
+                            Open search results for "${escapeHtml(userMsg)}" <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
                     </div>
                 `;
                 messagesContainer.appendChild(aiBubble);
@@ -961,384 +979,364 @@
                 return;
             }
 
-            // LIVE AI RESPONSE MODE (if API Key is saved)
-            aiBubble.innerHTML = `
-                <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xs font-mono flex-shrink-0 animate-pulse">
-                    AI
-                </div>
-                <div class="space-y-2 flex-grow">
-                    <span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
-                    <p class="text-xs text-slate-500 font-mono italic animate-pulse">Processing inquiry with Gemini...</p>
-                </div>
-            `;
-            messagesContainer.appendChild(aiBubble);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            // LIVE AI RESPONSE MODE (if API_KEY is provided)
+aiBubble.innerHTML = `
+               <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xs font-mono flex-shrink-0 animate-pulse">
+                   AI
+               </div>
+               <div class="space-y-2 flex-grow">
+                   <span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
+                   <p class="text-xs text-slate-500 font-mono italic animate-pulse">Processing inquiry...</p>
+               </div>
+           `;
+messagesContainer.appendChild(aiBubble);
+messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
-            try {
-                const systemPrompt = "You are a mathematical research assistant and editor for the Math Legacy Index platform. Provide concise, clear, logically structured explanations.";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${getActiveApiKey()}`;
-                
-                const payload = {
-                    contents: [{ parts: [{ text: userMsg }] }],
-                    systemInstruction: { parts: [{ text: systemPrompt }] }
-                };
+try {
+const systemPrompt = "You are a mathematical research assistant and editor for the Math Legacy Index platform. Provide concise, clear, logically structured explanations.";
+const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`;
 
-                if (useGrounding) {
-                    payload.tools = [{ "google_search": {} }];
-                }
+const payload = {
+contents: [{ parts: [{ text: userMsg }] }],
+systemInstruction: { parts: [{ text: systemPrompt }] }
+};
 
-                const response = await fetchWithBackoff(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
+if (useGrounding) {
+payload.tools = [{ "google_search": {} }];
+}
 
-                const result = await response.json();
-                const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || "Unable to compute response.";
+const response = await fetchWithBackoff(apiUrl, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(payload)
+});
 
-                let sourcesHtml = '';
-                const groundingMetadata = result?.candidates?.[0]?.groundingMetadata;
-                if (groundingMetadata && groundingMetadata.groundingAttributions) {
-                    const sources = groundingMetadata.groundingAttributions
-                        .map(a => ({ uri: a.web?.uri, title: a.web?.title }))
-                        .filter(s => s.uri && s.title);
+const result = await response.json();
+const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || "Unable to compute response.";
 
-                    if (sources.length > 0) {
-                        sourcesHtml = `<div class="mt-3 pt-2 border-t border-brand-800 text-[11px] space-y-1">
-                            <span class="font-mono text-slate-500 uppercase text-[10px]">Sources:</span>
-                            <div class="flex flex-wrap gap-2">
-                                ${sources.map(s => `<a href="${s.uri}" target="_blank" class="text-slate-300 hover:text-white flex items-center gap-1 underline"><i class="fa-solid fa-link text-[9px]"></i> ${escapeHtml(s.title)}</a>`).join('')}
-                            </div>
-                        </div>`;
-                    }
-                }
+let sourcesHtml = '';
+const groundingMetadata = result?.candidates?.[0]?.groundingMetadata;
+if (groundingMetadata && groundingMetadata.groundingAttributions) {
+const sources = groundingMetadata.groundingAttributions
+.map(a => ({ uri: a.web?.uri, title: a.web?.title }))
+.filter(s => s.uri && s.title);
 
-                aiBubble.querySelector('.space-y-2').innerHTML = `
-                    <span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
-                    <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap">${formatMarkdownText(text)}</div>
-                    ${sourcesHtml}
-                `;
+if (sources.length > 0) {
+sourcesHtml = `<div class="mt-3 pt-2 border-t border-brand-800 text-[11px] space-y-1">
+                           <span class="font-mono text-slate-500 uppercase text-[10px]">Sources:</span>
+                           <div class="flex flex-wrap gap-2">
+                               ${sources.map(s => `<a href="${s.uri}" target="_blank" class="text-slate-300 hover:text-white flex items-center gap-1 underline"><i class="fa-solid fa-link text-[9px]"></i> ${escapeHtml(s.title)}</a>`).join('')}
+                           </div>
+                       </div>`;
+}
+}
 
-            } catch (err) {
-                // Fallback to Gemini on error
-                const geminiUrl = `https://gemini.google.com/app`;
-                aiBubble.querySelector('.space-y-2').innerHTML = `
-                    <span class="text-xs font-semibold text-slate-300">Gemini Redirect</span>
-                    <p class="text-xs text-slate-300">API connection unavailable. Click below to continue in Gemini:</p>
-                    <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-purple-300 hover:text-purple-200 underline mt-1">
-                        Open Gemini App <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+aiBubble.querySelector('.space-y-2').innerHTML = `
+                   <span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
+                   <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap">${formatMarkdownText(text)}</div>
+                   ${sourcesHtml}
+               `;
+
+} catch (err) {
+                // Fallback to Google Search on error
+                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userMsg)}`;
+aiBubble.querySelector('.space-y-2').innerHTML = `
+                    <span class="text-xs font-semibold text-rose-400">Error</span>
+                    <p class="text-xs text-rose-300">An error occurred while reaching the service.</p>
+                    <span class="text-xs font-semibold text-slate-300">Google Search Redirect</span>
+                    <p class="text-xs text-slate-300">API connection unavailable. Opening Google Search in a new tab:</p>
+                    <a href="${searchUrl}" target="_blank" class="inline-flex items-center gap-2 text-xs font-medium text-sky-400 hover:text-sky-300 underline mt-1">
+                        Open search results for "${escapeHtml(userMsg)}" <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                     </a>
-                `;
-            }
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
+               `;
+}
+messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
 
-        // Dialogue Script & Voice Synthesis
-        async function generateAIDebate() {
-            const spk1 = document.getElementById('debateSpeaker1').value;
-            const spk2 = document.getElementById('debateSpeaker2').value;
-            const topic = document.getElementById('debateTopic').value;
+// Dialogue Script & Voice Synthesis
+async function generateAIDebate() {
+const spk1 = document.getElementById('debateSpeaker1').value;
+const spk2 = document.getElementById('debateSpeaker2').value;
+const topic = document.getElementById('debateTopic').value;
 
-            if (spk1 === spk2) {
-                alert("Please select two distinct historical figures.");
+if (spk1 === spk2) {
+alert("Please select two distinct historical figures.");
+return;
+}
+
+const btn = document.getElementById('generateDebateBtn');
+const synthBtn = document.getElementById('synthesizeAudioBtn');
+const container = document.getElementById('debateTranscript');
+
+            if (!API_KEY || API_KEY.trim() === "") {
+                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(spk1 + " vs " + spk2 + " " + topic)}`;
+                window.open(searchUrl, '_blank');
+                container.innerHTML = `<p class="text-xs text-slate-300 text-center py-6">Redirecting debate inquiry to Google Search in a new tab... <a href="${searchUrl}" target="_blank" class="text-sky-400 underline">Click here if search didn't open.</a></p>`;
                 return;
             }
 
-            const btn = document.getElementById('generateDebateBtn');
-            const synthBtn = document.getElementById('synthesizeAudioBtn');
-            const container = document.getElementById('debateTranscript');
+btn.disabled = true;
+btn.innerHTML = `Generating Dialogue...`;
+container.innerHTML = `<p class="text-xs text-slate-400 font-mono animate-pulse text-center py-6">Drafting discussion between ${spk1} and ${spk2}...</p>`;
 
-            if (!isApiKeyValid()) {
-                const geminiUrl = `https://gemini.google.com/app`;
-                try {
-                    window.open(geminiUrl, '_blank');
-                } catch(e) {}
-                container.innerHTML = `
-                    <div class="text-center py-6 space-y-3">
-                        <p class="text-xs text-slate-300">Redirecting debate prompt between <b>${spk1}</b> and <b>${spk2}</b> to Gemini...</p>
-                        <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-medium transition">
-                            <span>Open Gemini App</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-                `;
+try {
+const prompt = `Write a balanced 4-turn debate dialogue between ${spk1} and ${spk2} discussing: "${topic}". Format strictly as:\n${spk1}: [dialogue]\n${spk2}: [dialogue]\nKeep total turns under 6. Ensure each speaker accurately represents their historical philosophy.`;
+
+const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`;
+const response = await fetchWithBackoff(apiUrl, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+});
+
+const data = await response.json();
+const dialogue = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Unable to generate dialogue.";
+
+currentDebateText = dialogue;
+container.innerHTML = formatDebateDialogue(dialogue, spk1, spk2);
+synthBtn.disabled = false;
+
+} catch (e) {
+container.innerHTML = `<p class="text-xs text-rose-400">Error generating transcript.</p>`;
+} finally {
+btn.disabled = false;
+btn.innerHTML = `<i class="fa-solid fa-align-left text-[10px]"></i> Generate Dialogue Script`;
+}
+}
+
+async function synthesizeDebateAudio() {
+if (!currentDebateText) return;
+
+const synthBtn = document.getElementById('synthesizeAudioBtn');
+const playerContainer = document.getElementById('audioPlayerContainer');
+const player = document.getElementById('ttsAudioPlayer');
+
+synthBtn.disabled = true;
+synthBtn.innerHTML = `Synthesizing...`;
+
+try {
+const spk1 = document.getElementById('debateSpeaker1').value;
+const spk2 = document.getElementById('debateSpeaker2').value;
+
+const payload = {
+contents: [{
+parts: [{ text: `TTS conversation between ${spk1} and ${spk2}:\n${currentDebateText}` }]
+}],
+generationConfig: {
+responseModalities: ["AUDIO"],
+speechConfig: {
+multiSpeakerVoiceConfig: {
+speakerVoiceConfigs: [
+{ speaker: spk1, voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } },
+{ speaker: spk2, voiceConfig: { prebuiltVoiceConfig: { voiceName: "Puck" } } }
+]
+}
+}
+},
+model: "gemini-2.5-flash-preview-tts"
+};
+
+const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${API_KEY}`;
+const response = await fetchWithBackoff(apiUrl, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(payload)
+});
+
+const result = await response.json();
+const part = result?.candidates?.[0]?.content?.parts?.[0];
+const audioData = part?.inlineData?.data;
+const mimeType = part?.inlineData?.mimeType;
+
+if (audioData && mimeType) {
+const sampleRateMatch = mimeType.match(/rate=(\d+)/);
+const sampleRate = sampleRateMatch ? parseInt(sampleRateMatch[1], 10) : 24000;
+
+const pcmBuffer = base64ToArrayBuffer(audioData);
+const pcm16 = new Int16Array(pcmBuffer);
+const wavBlob = pcmToWav(pcm16, sampleRate);
+const audioUrl = URL.createObjectURL(wavBlob);
+
+player.src = audioUrl;
+playerContainer.classList.remove('hidden');
+player.play();
+} else {
+alert("Audio synthesis payload missing binary data.");
+}
+} catch (err) {
+alert("Failed to synthesize audio.");
+} finally {
+synthBtn.disabled = false;
+synthBtn.innerHTML = `<i class="fa-solid fa-volume-high text-[10px]"></i> Synthesize Audio`;
+}
+}
+
+        // Image Art Generation
+        // Image Art Generation & Fallback Search
+async function generateAIArtwork() {
+const titan = document.getElementById('artTitan').value;
+const style = document.getElementById('artStyle').value;
+const overlay = document.getElementById('artCustomPrompt').value.trim();
+
+const fullPrompt = `${titan}. Style: ${style}. ${overlay}`;
+
+const btn = document.getElementById('generateArtBtn');
+const placeholder = document.getElementById('artPlaceholder');
+const loading = document.getElementById('artLoading');
+const outputImg = document.getElementById('artOutputImg');
+
+            if (!API_KEY || API_KEY.trim() === "") {
+                const searchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(fullPrompt)}`;
+                window.open(searchUrl, '_blank');
+                alert("Opening Google Images for your visual prompt in a new tab!");
                 return;
             }
 
-            btn.disabled = true;
-            btn.innerHTML = `Generating Dialogue...`;
-            container.innerHTML = `<p class="text-xs text-slate-400 font-mono animate-pulse text-center py-6">Drafting discussion between ${spk1} and ${spk2}...</p>`;
+btn.disabled = true;
+placeholder.classList.add('hidden');
+outputImg.classList.add('hidden');
+loading.classList.remove('hidden');
 
-            try {
-                const prompt = `Write a balanced 4-turn debate dialogue between ${spk1} and ${spk2} discussing: "${topic}". Format strictly as:\n${spk1}: [dialogue]\n${spk2}: [dialogue]\nKeep total turns under 6. Ensure each speaker accurately represents their historical philosophy.`;
-                
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${getActiveApiKey()}`;
-                const response = await fetchWithBackoff(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                });
+try {
+const payload = {
+contents: [{ parts: [{ text: fullPrompt }] }],
+generationConfig: {
+responseModalities: ['IMAGE'],
+imageConfig: { aspectRatio: "16:9" }
+}
+};
 
-                const data = await response.json();
-                const dialogue = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Unable to generate dialogue.";
+const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image:generateContent?key=${API_KEY}`;
+const response = await fetchWithBackoff(apiUrl, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(payload)
+});
 
-                currentDebateText = dialogue;
-                container.innerHTML = formatDebateDialogue(dialogue, spk1, spk2);
-                synthBtn.disabled = false;
+const result = await response.json();
+const part = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData);
 
-            } catch (e) {
-                container.innerHTML = `<p class="text-xs text-rose-400">Error generating transcript.</p>`;
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = `<i class="fa-solid fa-align-left text-[10px]"></i> Generate Dialogue Script`;
-            }
-        }
+if (part) {
+const imageUrl = `data:${part.inlineData.mimeType};base64,${part.inlineData.data}`;
+outputImg.src = imageUrl;
+outputImg.classList.remove('hidden');
+} else {
+                    placeholder.classList.remove('hidden');
+                    alert("Image rendering returned no inline data.");
+                    const searchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(fullPrompt)}`;
+                    window.open(searchUrl, '_blank');
+}
 
-        async function synthesizeDebateAudio() {
-            if (!currentDebateText) return;
-
-            const synthBtn = document.getElementById('synthesizeAudioBtn');
-            const playerContainer = document.getElementById('audioPlayerContainer');
-            const player = document.getElementById('ttsAudioPlayer');
-
-            synthBtn.disabled = true;
-            synthBtn.innerHTML = `Synthesizing...`;
-
-            try {
-                const spk1 = document.getElementById('debateSpeaker1').value;
-                const spk2 = document.getElementById('debateSpeaker2').value;
-
-                const payload = {
-                    contents: [{
-                        parts: [{ text: `TTS conversation between ${spk1} and ${spk2}:\n${currentDebateText}` }]
-                    }],
-                    generationConfig: {
-                        responseModalities: ["AUDIO"],
-                        speechConfig: {
-                            multiSpeakerVoiceConfig: {
-                                speakerVoiceConfigs: [
-                                    { speaker: spk1, voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } },
-                                    { speaker: spk2, voiceConfig: { prebuiltVoiceConfig: { voiceName: "Puck" } } }
-                                ]
-                            }
-                        }
-                    },
-                    model: "gemini-2.5-flash-preview-tts"
-                };
-
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${getActiveApiKey()}`;
-                const response = await fetchWithBackoff(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-                const part = result?.candidates?.[0]?.content?.parts?.[0];
-                const audioData = part?.inlineData?.data;
-                const mimeType = part?.inlineData?.mimeType;
-
-                if (audioData && mimeType) {
-                    const sampleRateMatch = mimeType.match(/rate=(\d+)/);
-                    const sampleRate = sampleRateMatch ? parseInt(sampleRateMatch[1], 10) : 24000;
-
-                    const pcmBuffer = base64ToArrayBuffer(audioData);
-                    const pcm16 = new Int16Array(pcmBuffer);
-                    const wavBlob = pcmToWav(pcm16, sampleRate);
-                    const audioUrl = URL.createObjectURL(wavBlob);
-
-                    player.src = audioUrl;
-                    playerContainer.classList.remove('hidden');
-                    player.play();
-                } else {
-                    alert("Audio synthesis payload missing binary data.");
-                }
-            } catch (err) {
-                alert("Failed to synthesize audio.");
-            } finally {
-                synthBtn.disabled = false;
-                synthBtn.innerHTML = `<i class="fa-solid fa-volume-high text-[10px]"></i> Synthesize Audio`;
-            }
-        }
-
-        // Image Art Generation & Gemini Fallback
-        async function generateAIArtwork() {
-            const titan = document.getElementById('artTitan').value;
-            const style = document.getElementById('artStyle').value;
-            const overlay = document.getElementById('artCustomPrompt').value.trim();
-
-            const fullPrompt = `${titan}. Style: ${style}. ${overlay}`;
-
-            const btn = document.getElementById('generateArtBtn');
-            const placeholder = document.getElementById('artPlaceholder');
-            const loading = document.getElementById('artLoading');
-            const outputImg = document.getElementById('artOutputImg');
-
-            if (!isApiKeyValid()) {
-                const geminiUrl = `https://gemini.google.com/app`;
-                try {
-                    window.open(geminiUrl, '_blank');
-                } catch(e) {}
-                loading.classList.add('hidden');
+} catch (err) {
                 placeholder.classList.remove('hidden');
-                placeholder.innerHTML = `
-                    <div class="space-y-3 p-4">
-                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-300 flex items-center justify-center mx-auto text-base">
-                            <i class="fa-solid fa-sparkles"></i>
-                        </div>
-                        <h4 class="font-medium text-sm text-slate-200">Gemini Redirect</h4>
-                        <p class="text-xs text-slate-400 max-w-sm">Opening Gemini for visual rendering prompt generation.</p>
-                        <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-medium transition">
-                            <span>Open Gemini App</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-                `;
-                btn.disabled = false;
-                return;
-            }
+                alert("Failed to generate artwork.");
+                const searchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(fullPrompt)}`;
+                window.open(searchUrl, '_blank');
+} finally {
+loading.classList.add('hidden');
+btn.disabled = false;
+}
+}
 
-            btn.disabled = true;
-            placeholder.classList.add('hidden');
-            outputImg.classList.add('hidden');
-            loading.classList.remove('hidden');
+function pcmToWav(pcm16Data, sampleRate = 24000) {
+const numChannels = 1;
+const bytesPerSample = 2;
+const blockAlign = numChannels * bytesPerSample;
+const byteRate = sampleRate * blockAlign;
+const dataSize = pcm16Data.length * bytesPerSample;
+const buffer = new ArrayBuffer(44 + dataSize);
+const view = new DataView(buffer);
 
-            try {
-                const payload = {
-                    contents: [{ parts: [{ text: fullPrompt }] }],
-                    generationConfig: {
-                        responseModalities: ['IMAGE'],
-                        imageConfig: { aspectRatio: "16:9" }
-                    }
-                };
+writeString(view, 0, 'RIFF');
+view.setUint32(4, 36 + dataSize, true);
+writeString(view, 8, 'WAVE');
+writeString(view, 12, 'fmt ');
+view.setUint32(16, 16, true);
+view.setUint16(20, 1, true);
+view.setUint16(22, numChannels, true);
+view.setUint32(24, sampleRate, true);
+view.setUint32(28, byteRate, true);
+view.setUint16(32, blockAlign, true);
+view.setUint16(34, 16, true);
+writeString(view, 36, 'data');
+view.setUint32(40, dataSize, true);
 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image:generateContent?key=${getActiveApiKey()}`;
-                const response = await fetchWithBackoff(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
+for (let i = 0; i < pcm16Data.length; i++) {
+view.setInt16(44 + i * 2, pcm16Data[i], true);
+}
 
-                const result = await response.json();
-                const part = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData);
+return new Blob([buffer], { type: 'audio/wav' });
+}
 
-                if (part) {
-                    const imageUrl = `data:${part.inlineData.mimeType};base64,${part.inlineData.data}`;
-                    outputImg.src = imageUrl;
-                    outputImg.classList.remove('hidden');
-                } else {
-                    const geminiUrl = `https://gemini.google.com/app`;
-                    window.open(geminiUrl, '_blank');
-                }
+function writeString(view, offset, string) {
+for (let i = 0; i < string.length; i++) {
+view.setUint8(offset + i, string.charCodeAt(i));
+}
+}
 
-            } catch (err) {
-                const geminiUrl = `https://gemini.google.com/app`;
-                window.open(geminiUrl, '_blank');
-            } finally {
-                loading.classList.add('hidden');
-                btn.disabled = false;
-            }
-        }
+function base64ToArrayBuffer(base64) {
+const binaryString = window.atob(base64);
+const len = binaryString.length;
+const bytes = new Uint8Array(len);
+for (let i = 0; i < len; i++) {
+bytes[i] = binaryString.charCodeAt(i);
+}
+return bytes.buffer;
+}
 
-        function pcmToWav(pcm16Data, sampleRate = 24000) {
-            const numChannels = 1;
-            const bytesPerSample = 2;
-            const blockAlign = numChannels * bytesPerSample;
-            const byteRate = sampleRate * blockAlign;
-            const dataSize = pcm16Data.length * bytesPerSample;
-            const buffer = new ArrayBuffer(44 + dataSize);
-            const view = new DataView(buffer);
+// Formatting Helpers
+function escapeHtml(text) {
+return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
 
-            writeString(view, 0, 'RIFF');
-            view.setUint32(4, 36 + dataSize, true);
-            writeString(view, 8, 'WAVE');
-            writeString(view, 12, 'fmt ');
-            view.setUint32(16, 16, true);
-            view.setUint16(20, 1, true);
-            view.setUint16(22, numChannels, true);
-            view.setUint32(24, sampleRate, true);
-            view.setUint32(28, byteRate, true);
-            view.setUint16(32, blockAlign, true);
-            view.setUint16(34, 16, true);
-            writeString(view, 36, 'data');
-            view.setUint32(40, dataSize, true);
+function formatMarkdownText(text) {
+return text
+.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+.replace(/\*(.*?)\*/g, '<em>$1</em>')
+.replace(/`([^`]+)`/g, '<code class="bg-brand-900 px-1 py-0.5 rounded font-mono text-slate-200">$1</code>');
+}
 
-            for (let i = 0; i < pcm16Data.length; i++) {
-                view.setInt16(44 + i * 2, pcm16Data[i], true);
-            }
+function formatDebateDialogue(dialogue, spk1, spk2) {
+const lines = dialogue.split('\n').filter(l => l.trim().length > 0);
+return lines.map(line => {
+if (line.startsWith(`${spk1}:`)) {
+return `<div class="p-3 bg-brand-900 rounded-lg border border-brand-800"><b class="text-slate-100 font-medium">${spk1}:</b> ${escapeHtml(line.replace(`${spk1}:`, ''))}</div>`;
+} else if (line.startsWith(`${spk2}:`)) {
+return `<div class="p-3 bg-brand-900/80 rounded-lg border border-brand-800"><b class="text-slate-200 font-medium">${spk2}:</b> ${escapeHtml(line.replace(`${spk2}:`, ''))}</div>`;
+} else {
+return `<div class="p-2 text-slate-400 italic">${escapeHtml(line)}</div>`;
+}
+}).join('');
+}
 
-            return new Blob([buffer], { type: 'audio/wav' });
-        }
+// Formula Sandbox Calculations
+function calcPythagoras() {
+const a = parseFloat(document.getElementById('sliderA').value);
+const b = parseFloat(document.getElementById('sliderB').value);
+document.getElementById('valA').innerText = a;
+document.getElementById('valB').innerText = b;
+const c = Math.sqrt(a * a + b * b);
+document.getElementById('resultC').innerText = c.toFixed(2);
+}
 
-        function writeString(view, offset, string) {
-            for (let i = 0; i < string.length; i++) {
-                view.setUint8(offset + i, string.charCodeAt(i));
-            }
-        }
+function calcGCD() {
+let a = parseInt(document.getElementById('gcdNum1').value) || 1;
+let b = parseInt(document.getElementById('gcdNum2').value) || 1;
+const origA = a, origB = b;
+while (b) {
+let t = b;
+b = a % b;
+a = t;
+}
+document.getElementById('gcdOutput').innerText = `GCD(${origA}, ${origB}) = ${a}`;
+}
 
-        function base64ToArrayBuffer(base64) {
-            const binaryString = window.atob(base64);
-            const len = binaryString.length;
-            const bytes = new Uint8Array(len);
-            for (let i = 0; i < len; i++) {
-                bytes[i] = binaryString.charCodeAt(i);
-            }
-            return bytes.buffer;
-        }
-
-        // Formatting Helpers
-        function escapeHtml(text) {
-            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        }
-
-        function formatMarkdownText(text) {
-            return text
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                .replace(/`([^`]+)`/g, '<code class="bg-brand-900 px-1 py-0.5 rounded font-mono text-slate-200">$1</code>');
-        }
-
-        function formatDebateDialogue(dialogue, spk1, spk2) {
-            const lines = dialogue.split('\n').filter(l => l.trim().length > 0);
-            return lines.map(line => {
-                if (line.startsWith(`${spk1}:`)) {
-                    return `<div class="p-3 bg-brand-900 rounded-lg border border-brand-800"><b class="text-slate-100 font-medium">${spk1}:</b> ${escapeHtml(line.replace(`${spk1}:`, ''))}</div>`;
-                } else if (line.startsWith(`${spk2}:`)) {
-                    return `<div class="p-3 bg-brand-900/80 rounded-lg border border-brand-800"><b class="text-slate-200 font-medium">${spk2}:</b> ${escapeHtml(line.replace(`${spk2}:`, ''))}</div>`;
-                } else {
-                    return `<div class="p-2 text-slate-400 italic">${escapeHtml(line)}</div>`;
-                }
-            }).join('');
-        }
-
-        // Formula Sandbox Calculations
-        function calcPythagoras() {
-            const a = parseFloat(document.getElementById('sliderA').value);
-            const b = parseFloat(document.getElementById('sliderB').value);
-            document.getElementById('valA').innerText = a;
-            document.getElementById('valB').innerText = b;
-            const c = Math.sqrt(a * a + b * b);
-            document.getElementById('resultC').innerText = c.toFixed(2);
-        }
-
-        function calcGCD() {
-            let a = parseInt(document.getElementById('gcdNum1').value) || 1;
-            let b = parseInt(document.getElementById('gcdNum2').value) || 1;
-            const origA = a, origB = b;
-            while (b) {
-                let t = b;
-                b = a % b;
-                a = t;
-            }
-            document.getElementById('gcdOutput').innerText = `GCD(${origA}, ${origB}) = ${a}`;
-        }
-
-        // Initial Load
-        window.addEventListener('DOMContentLoaded', () => {
-            renderHomeCards();
-            renderDossierCards();
-            updateApiKeyBtnText();
-        });
-    </script>
+// Initial Load
+window.addEventListener('DOMContentLoaded', () => {
+renderHomeCards();
+renderDossierCards();
+});
+</script>
 </body>
+</html>
 </html>
