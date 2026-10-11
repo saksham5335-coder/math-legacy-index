@@ -130,6 +130,11 @@
 
             <!-- External Reference & Mobile Toggle -->
             <div class="flex items-center gap-3">
+                <button onclick="toggleApiKeyModal()" class="px-3 py-1.5 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center gap-2">
+                    <i class="fa-solid fa-key text-[10px] text-amber-400"></i>
+                    <span id="apiKeyBtnText">Set Gemini Key</span>
+                </button>
+
                 <a href="https://trends.google.com/trends/explore?date=all&q=%2Fm%2F02k02,%2Fm%2F05sr0,%2Fm%2F0372p,%2Fm%2F04jzj,%2Fm%2F0cty0&hl=en-US" target="_blank" class="hidden xl:flex px-3 py-1.5 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition items-center gap-2">
                     <span>Google Trends Link</span>
                     <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
@@ -138,6 +143,33 @@
                 <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg bg-brand-900 text-slate-300 hover:text-white border border-brand-800">
                     <i class="fa-solid fa-bars text-sm"></i>
                 </button>
+            </div>
+        </div>
+
+        <!-- Gemini API Key Settings Modal -->
+        <div id="apiKeyModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+            <div class="bg-brand-900 border border-brand-700 rounded-2xl p-6 max-w-md w-full space-y-4 shadow-2xl">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-base font-semibold text-slate-100 flex items-center gap-2">
+                        <i class="fa-solid fa-key text-amber-400"></i> Gemini API Key Settings
+                    </h3>
+                    <button onclick="toggleApiKeyModal()" class="text-slate-400 hover:text-slate-200">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Save your Gemini API Key to run native in-app chats, audio dialogue synthesis, and visual rendering directly within this site.
+                </p>
+                <div>
+                    <input type="password" id="userApiKeyInput" placeholder="AIzaSy..." class="w-full bg-brand-950 border border-brand-700 rounded-lg p-2.5 text-xs text-slate-100 font-mono focus:outline-none focus:border-amber-400">
+                </div>
+                <div class="flex items-center justify-between pt-2">
+                    <button onclick="clearUserApiKey()" class="text-xs text-rose-400 hover:text-rose-300 underline">Clear Key</button>
+                    <div class="flex gap-2">
+                        <button onclick="toggleApiKeyModal()" class="px-3 py-1.5 rounded-lg bg-brand-800 text-slate-300 text-xs font-medium">Cancel</button>
+                        <button onclick="saveUserApiKey()" class="px-4 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-semibold">Save Key</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -334,7 +366,7 @@
         <section id="view-ai-chat" class="page-view space-y-6 hidden">
             <div class="panel-card p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <h2 class="text-xl font-semibold text-slate-100">Analytical Assistant & Search</h2>
+                    <h2 class="text-xl font-semibold text-slate-100">Analytical Assistant & Gemini Search</h2>
                     <p class="text-xs text-slate-400 mt-1">Inquire about proofs, historical contexts, or contemporary search metrics.</p>
                 </div>
 
@@ -374,16 +406,16 @@
                         <div class="space-y-1">
                             <span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
                             <p class="text-xs text-slate-300 leading-relaxed">
-                                Welcome. Enter any question to inquire about mathematical proofs, history, or search trends. If an API key is active, AI answers directly; otherwise, inquiries launch a direct Google Search in a new tab!
+                                Welcome. Enter any question to inquire about mathematical proofs, history, or search trends. If an API key is active, Gemini answers directly inside the app; otherwise, inquiries launch directly in Gemini!
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <form onsubmit="handleChatSubmit(event)" class="p-3 bg-brand-900 border-t border-brand-800 flex items-center gap-2">
-                    <input type="text" id="chatInput" placeholder="Enter inquiry..." class="flex-grow bg-brand-800 text-slate-100 placeholder-slate-500 text-xs sm:text-sm rounded-lg px-4 py-2.5 border border-brand-700 focus:outline-none focus:border-slate-500">
+                    <input type="text" id="chatInput" placeholder="Enter inquiry for Gemini..." class="flex-grow bg-brand-800 text-slate-100 placeholder-slate-500 text-xs sm:text-sm rounded-lg px-4 py-2.5 border border-brand-700 focus:outline-none focus:border-slate-500">
                     <button type="submit" id="chatSubmitBtn" class="px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center gap-2 flex-shrink-0">
-                        <span>Search / Ask</span>
+                        <span>Ask / Launch Gemini</span>
                     </button>
                 </form>
             </div>
@@ -497,7 +529,7 @@
                     </div>
 
                     <button onclick="generateAIArtwork()" id="generateArtBtn" class="w-full py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center justify-center gap-2">
-                        <span>Generate Image / Search</span>
+                        <span>Generate Image / Gemini</span>
                     </button>
                 </div>
 
@@ -558,7 +590,7 @@
                     </div>
 
                     <button onclick="askAIFormula('Pythagorean Theorem', 'a^2 + b^2 = c^2')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
-                        <span>Inquire in Assistant / Google</span>
+                        <span>Inquire with Gemini</span>
                         <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </button>
                 </div>
@@ -580,7 +612,7 @@
                     </div>
 
                     <button onclick="askAIFormula('Hardy-Ramanujan 1729', '1^3 + 12^3 = 9^3 + 10^3 = 1729')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
-                        <span>Inquire in Assistant / Google</span>
+                        <span>Inquire with Gemini</span>
                         <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </button>
                 </div>
@@ -597,7 +629,7 @@
                     </div>
 
                     <button onclick="askAIFormula('Euler Identity', 'e^(i*pi) + 1 = 0')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
-                        <span>Inquire in Assistant / Google</span>
+                        <span>Inquire with Gemini</span>
                         <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </button>
                 </div>
@@ -634,99 +666,53 @@
     </footer>
 
     <script>
-        // Optional API Key for live AI responses (If left empty, searches seamlessly redirect to Google Search)
-        const API_KEY = "AIzaSyCmtOa8Bkyma5UiDzlgnRC6Zr8z1Se5s7o";
+        // Optional API Key for live AI responses
+        let API_KEY = "";
 
-        // Data Store with exact structured dossier attributes
-        const titandata = {
-            euclid: {
-                id: '/m/02k02',
-                name: 'Euclid of Alexandria',
-                shortName: 'Euclid',
-                era: 'c. 300 BC (Classical Greece)',
-                quote: '“There is no royal road to geometry.”',
-                field: 'Geometry, Number Theory & Logic',
-                keyDiscovery: 'Elements (Axiomatic Geometry), Euclidean Algorithm (GCD)',
-                spikeReason: 'Elementary & high school geometry curriculum cycles globally in autumn and spring.',
-                wwScore: 42,
-                inScore: 38
-            },
-            pythagoras: {
-                id: '/m/05sr0',
-                name: 'Pythagoras of Samos',
-                shortName: 'Pythagoras',
-                era: 'c. 570 – 495 BC (Ancient Greece)',
-                quote: '“Number is the ruler of forms and ideas.”',
-                field: 'Geometry, Metaphysics, Music Ratios',
-                keyDiscovery: 'Pythagorean Theorem (a² + b² = c²), Musical Harmonics',
-                spikeReason: 'Massive global search volume driven by basic school math homework and exams year-round.',
-                wwScore: 78,
-                inScore: 68
-            },
-            leibniz: {
-                id: '/m/0372p',
-                name: 'Gottfried Wilhelm Leibniz',
-                shortName: 'Leibniz',
-                era: '1646 – 1716 (Germany / Holy Roman Empire)',
-                quote: '“Music is the pleasure the human mind experiences from counting without being aware that it is counting.”',
-                field: 'Infinitesimal Calculus, Logic, Binary Arithmetic',
-                keyDiscovery: 'Calculus Notation (dy/dx), Modern Binary Number System (0,1)',
-                spikeReason: 'Undergraduate AP Calculus exam periods in universities worldwide.',
-                wwScore: 28,
-                inScore: 22
-            },
-            euler: {
-                id: '/m/04jzj',
-                name: 'Leonhard Euler',
-                shortName: 'Euler',
-                era: '1707 – 1783 (Switzerland / St. Petersburg)',
-                quote: '“For since the fabric of the universe is the most perfect... nothing at all takes place in the universe in which some rule of maximum or minimum does not appear.”',
-                field: 'Mathematical Analysis, Graph Theory, Topology',
-                keyDiscovery: 'Euler\'s Identity (e^(iπ)+1=0), Graph Theory (7 Bridges), Euler\'s e',
-                spikeReason: 'STEM, computer science, and engineering course enrollment peaks globally.',
-                wwScore: 55,
-                inScore: 45
-            },
-            ramanujan: {
-                id: '/m/0cty0',
-                name: 'Srinivasa Ramanujan',
-                shortName: 'Ramanujan',
-                era: '1887 – 1920 (India / Cambridge UK)',
-                quote: '“An equation for me has no meaning unless it expresses a thought of God.”',
-                field: 'Infinite Series, Number Theory, Continued Fractions',
-                keyDiscovery: 'Taxicab Number (1729), Mock Theta Functions, Ramanujan Constant',
-                spikeReason: 'Huge annual surge in India on Dec 22 (National Math Day) & pop culture movie interest.',
-                wwScore: 36,
-                inScore: 92
+        function getActiveApiKey() {
+            const storedKey = localStorage.getItem('gemini_api_key');
+            if (storedKey && storedKey.trim().length > 0) return storedKey.trim();
+            return API_KEY;
+        }
+
+        function isApiKeyValid() {
+            const key = getActiveApiKey();
+            return key && key.trim() !== "" && !key.includes("AIzaSyCmtOa8Bkyma5UiDzlgnRC6Zr8z1Se5s7o");
+        }
+
+        function toggleApiKeyModal() {
+            const modal = document.getElementById('apiKeyModal');
+            if (modal) modal.classList.toggle('hidden');
+            const input = document.getElementById('userApiKeyInput');
+            if (input) input.value = localStorage.getItem('gemini_api_key') || '';
+        }
+
+        function saveUserApiKey() {
+            const val = document.getElementById('userApiKeyInput').value.trim();
+            if (val) {
+                localStorage.setItem('gemini_api_key', val);
+            } else {
+                localStorage.removeItem('gemini_api_key');
             }
-        };
+            updateApiKeyBtnText();
+            toggleApiKeyModal();
+        }
 
-        let currentGeo = 'worldwide';
-        let currentDebateText = "";
+        function clearUserApiKey() {
+            localStorage.removeItem('gemini_api_key');
+            document.getElementById('userApiKeyInput').value = '';
+            updateApiKeyBtnText();
+            toggleApiKeyModal();
+        }
 
-        // Navigation Router with fade-in effect
-        function navigateTo(viewId) {
-            document.querySelectorAll('.page-view').forEach(view => view.classList.add('hidden'));
-
-            const target = document.getElementById(`view-${viewId}`);
-            if (target) {
-                target.classList.remove('hidden');
-            }
-
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.className = "nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-400 hover:text-slate-200";
-            });
-
-            const activeBtn = document.getElementById(`nav-${viewId}`);
-            if (activeBtn) {
-                activeBtn.className = "nav-btn px-3 py-1.5 text-xs font-medium rounded-lg transition text-slate-100 bg-brand-800";
-            }
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            if (viewId === 'trends') {
-                renderGoogleTrendsEmbed();
-                renderH2H();
+        function updateApiKeyBtnText() {
+            const btnText = document.getElementById('apiKeyBtnText');
+            if (btnText) {
+                if (isApiKeyValid()) {
+                    btnText.innerText = "Gemini Key Saved";
+                } else {
+                    btnText.innerText = "Set Gemini Key";
+                }
             }
         }
 
@@ -940,23 +926,34 @@
             const aiBubble = document.createElement('div');
             aiBubble.className = "flex items-start gap-3 bg-brand-900/60 p-4 rounded-xl border border-brand-800 max-w-3xl";
 
-            // DIRECT GOOGLE SEARCH REDIRECT MODE (if API_KEY is empty or missing)
-            if (!API_KEY || API_KEY.trim() === "") {
-                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userMsg)}`;
-                window.open(searchUrl, '_blank');
+            // DIRECT GEMINI REDIRECT MODE (if no API Key is saved)
+            if (!isApiKeyValid()) {
+                const geminiUrl = `https://gemini.google.com/app`;
+                try {
+                    window.open(geminiUrl, '_blank');
+                } catch (err) {
+                    console.log('Popup prevented by browser:', err);
+                }
 
                 aiBubble.innerHTML = `
-                    <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xs font-mono flex-shrink-0">
-                        <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                    <div class="w-7 h-7 rounded-md bg-purple-900/60 border border-purple-500/40 flex items-center justify-center text-purple-300 text-xs font-mono flex-shrink-0">
+                        <i class="fa-solid fa-sparkles text-xs"></i>
                     </div>
                     <div class="space-y-2 flex-grow">
-                        <span class="text-xs font-semibold text-slate-300">Google Search Redirect</span>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-200">Gemini Redirect</span>
+                            <span class="text-[10px] font-mono text-purple-300 bg-purple-900/50 px-2 py-0.5 rounded border border-purple-700/50">Gemini App</span>
+                        </div>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            Inquiry redirected to Google Search in a new tab:
+                            Opening Gemini for inquiry: <b class="text-slate-100">"${escapeHtml(userMsg)}"</b>
                         </p>
-                        <a href="${searchUrl}" target="_blank" class="inline-flex items-center gap-2 text-xs font-medium text-sky-400 hover:text-sky-300 underline">
-                            Open search results for "${escapeHtml(userMsg)}" <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                        </a>
+                        <p class="text-[11px] text-slate-400">Tip: Click "Set Gemini Key" in the top bar to get direct AI responses right inside this application.</p>
+                        <div class="pt-1">
+                            <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-medium transition">
+                                <span>Open Gemini App</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
                     </div>
                 `;
                 messagesContainer.appendChild(aiBubble);
@@ -964,14 +961,14 @@
                 return;
             }
 
-            // LIVE AI RESPONSE MODE (if API_KEY is provided)
+            // LIVE AI RESPONSE MODE (if API Key is saved)
             aiBubble.innerHTML = `
                 <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xs font-mono flex-shrink-0 animate-pulse">
                     AI
                 </div>
                 <div class="space-y-2 flex-grow">
                     <span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
-                    <p class="text-xs text-slate-500 font-mono italic animate-pulse">Processing inquiry...</p>
+                    <p class="text-xs text-slate-500 font-mono italic animate-pulse">Processing inquiry with Gemini...</p>
                 </div>
             `;
             messagesContainer.appendChild(aiBubble);
@@ -979,7 +976,7 @@
 
             try {
                 const systemPrompt = "You are a mathematical research assistant and editor for the Math Legacy Index platform. Provide concise, clear, logically structured explanations.";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${getActiveApiKey()}`;
                 
                 const payload = {
                     contents: [{ parts: [{ text: userMsg }] }],
@@ -1023,13 +1020,13 @@
                 `;
 
             } catch (err) {
-                // Fallback to Google Search on error
-                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(userMsg)}`;
+                // Fallback to Gemini on error
+                const geminiUrl = `https://gemini.google.com/app`;
                 aiBubble.querySelector('.space-y-2').innerHTML = `
-                    <span class="text-xs font-semibold text-slate-300">Google Search Redirect</span>
-                    <p class="text-xs text-slate-300">API connection unavailable. Opening Google Search in a new tab:</p>
-                    <a href="${searchUrl}" target="_blank" class="inline-flex items-center gap-2 text-xs font-medium text-sky-400 hover:text-sky-300 underline mt-1">
-                        Open search results for "${escapeHtml(userMsg)}" <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    <span class="text-xs font-semibold text-slate-300">Gemini Redirect</span>
+                    <p class="text-xs text-slate-300">API connection unavailable. Click below to continue in Gemini:</p>
+                    <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-purple-300 hover:text-purple-200 underline mt-1">
+                        Open Gemini App <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                     </a>
                 `;
             }
@@ -1051,10 +1048,20 @@
             const synthBtn = document.getElementById('synthesizeAudioBtn');
             const container = document.getElementById('debateTranscript');
 
-            if (!API_KEY || API_KEY.trim() === "") {
-                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(spk1 + " vs " + spk2 + " " + topic)}`;
-                window.open(searchUrl, '_blank');
-                container.innerHTML = `<p class="text-xs text-slate-300 text-center py-6">Redirecting debate inquiry to Google Search in a new tab... <a href="${searchUrl}" target="_blank" class="text-sky-400 underline">Click here if search didn't open.</a></p>`;
+            if (!isApiKeyValid()) {
+                const geminiUrl = `https://gemini.google.com/app`;
+                try {
+                    window.open(geminiUrl, '_blank');
+                } catch(e) {}
+                container.innerHTML = `
+                    <div class="text-center py-6 space-y-3">
+                        <p class="text-xs text-slate-300">Redirecting debate prompt between <b>${spk1}</b> and <b>${spk2}</b> to Gemini...</p>
+                        <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-medium transition">
+                            <span>Open Gemini App</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                `;
                 return;
             }
 
@@ -1065,7 +1072,7 @@
             try {
                 const prompt = `Write a balanced 4-turn debate dialogue between ${spk1} and ${spk2} discussing: "${topic}". Format strictly as:\n${spk1}: [dialogue]\n${spk2}: [dialogue]\nKeep total turns under 6. Ensure each speaker accurately represents their historical philosophy.`;
                 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${getActiveApiKey()}`;
                 const response = await fetchWithBackoff(apiUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -1119,7 +1126,7 @@
                     model: "gemini-2.5-flash-preview-tts"
                 };
 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${API_KEY}`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${getActiveApiKey()}`;
                 const response = await fetchWithBackoff(apiUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -1154,7 +1161,7 @@
             }
         }
 
-        // Image Art Generation & Fallback Search
+        // Image Art Generation & Gemini Fallback
         async function generateAIArtwork() {
             const titan = document.getElementById('artTitan').value;
             const style = document.getElementById('artStyle').value;
@@ -1167,10 +1174,27 @@
             const loading = document.getElementById('artLoading');
             const outputImg = document.getElementById('artOutputImg');
 
-            if (!API_KEY || API_KEY.trim() === "") {
-                const searchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(fullPrompt)}`;
-                window.open(searchUrl, '_blank');
-                alert("Opening Google Images for your visual prompt in a new tab!");
+            if (!isApiKeyValid()) {
+                const geminiUrl = `https://gemini.google.com/app`;
+                try {
+                    window.open(geminiUrl, '_blank');
+                } catch(e) {}
+                loading.classList.add('hidden');
+                placeholder.classList.remove('hidden');
+                placeholder.innerHTML = `
+                    <div class="space-y-3 p-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-300 flex items-center justify-center mx-auto text-base">
+                            <i class="fa-solid fa-sparkles"></i>
+                        </div>
+                        <h4 class="font-medium text-sm text-slate-200">Gemini Redirect</h4>
+                        <p class="text-xs text-slate-400 max-w-sm">Opening Gemini for visual rendering prompt generation.</p>
+                        <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-medium transition">
+                            <span>Open Gemini App</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                `;
+                btn.disabled = false;
                 return;
             }
 
@@ -1188,7 +1212,7 @@
                     }
                 };
 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image:generateContent?key=${API_KEY}`;
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image:generateContent?key=${getActiveApiKey()}`;
                 const response = await fetchWithBackoff(apiUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -1203,13 +1227,13 @@
                     outputImg.src = imageUrl;
                     outputImg.classList.remove('hidden');
                 } else {
-                    const searchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(fullPrompt)}`;
-                    window.open(searchUrl, '_blank');
+                    const geminiUrl = `https://gemini.google.com/app`;
+                    window.open(geminiUrl, '_blank');
                 }
 
             } catch (err) {
-                const searchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(fullPrompt)}`;
-                window.open(searchUrl, '_blank');
+                const geminiUrl = `https://gemini.google.com/app`;
+                window.open(geminiUrl, '_blank');
             } finally {
                 loading.classList.add('hidden');
                 btn.disabled = false;
@@ -1313,6 +1337,7 @@
         window.addEventListener('DOMContentLoaded', () => {
             renderHomeCards();
             renderDossierCards();
+            updateApiKeyBtnText();
         });
     </script>
 </body>
