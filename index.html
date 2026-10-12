@@ -129,11 +129,6 @@
 
             <!-- External Reference & Mobile Toggle -->
             <div class="flex items-center gap-3">
-                <button onclick="toggleApiKeyModal()" class="px-3 py-1.5 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center gap-2">
-                    <i class="fa-solid fa-key text-[10px] text-amber-400"></i>
-                    <span id="apiKeyBtnText">Set Gemini Key</span>
-                </button>
-
                 <a href="https://trends.google.com/trends/explore?date=all&q=%2Fm%2F02k02,%2Fm%2F05sr0,%2Fm%2F0372p,%2Fm%2F04jzj,%2Fm%2F0cty0&hl=en-US" target="_blank" class="hidden xl:flex px-3 py-1.5 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition items-center gap-2">
                     <span>Google Trends Link</span>
                     <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
@@ -142,33 +137,6 @@
                 <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg bg-brand-900 text-slate-300 hover:text-white border border-brand-800">
                     <i class="fa-solid fa-bars text-sm"></i>
                 </button>
-            </div>
-        </div>
-
-        <!-- Gemini API Key Settings Modal -->
-        <div id="apiKeyModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-            <div class="bg-brand-900 border border-brand-700 rounded-2xl p-6 max-w-md w-full space-y-4 shadow-2xl">
-                <div class="flex items-center justify-between">
-                    <h3 class="text-base font-semibold text-slate-100 flex items-center gap-2">
-                        <i class="fa-solid fa-key text-amber-400"></i> Gemini API Key Settings
-                    </h3>
-                    <button onclick="toggleApiKeyModal()" class="text-slate-400 hover:text-slate-200">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-                <p class="text-xs text-slate-400 leading-relaxed">
-                    Save your Gemini API Key to run native in-app chats, audio dialogue synthesis, and visual rendering directly within this site.
-                </p>
-                <div>
-                    <input type="password" id="userApiKeyInput" placeholder="AIzaSy..." class="w-full bg-brand-950 border border-brand-700 rounded-lg p-2.5 text-xs text-slate-100 font-mono focus:outline-none focus:border-amber-400">
-                </div>
-                <div class="flex items-center justify-between pt-2">
-                    <button onclick="clearUserApiKey()" class="text-xs text-rose-400 hover:text-rose-300 underline">Clear Key</button>
-                    <div class="flex gap-2">
-                        <button onclick="toggleApiKeyModal()" class="px-3 py-1.5 rounded-lg bg-brand-800 text-slate-300 text-xs font-medium">Cancel</button>
-                        <button onclick="saveUserApiKey()" class="px-4 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-semibold">Save Key</button>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -366,18 +334,7 @@
             <div class="panel-card p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h2 class="text-xl font-semibold text-slate-100">Analytical Assistant & Gemini Search</h2>
-                    <p class="text-xs text-slate-400 mt-1">Inquire about proofs, historical contexts, or contemporary search metrics.</p>
-                </div>
-
-                <!-- Search Grounding Toggle -->
-                <div class="flex items-center gap-3 bg-brand-900 px-3.5 py-2 rounded-lg border border-brand-800 self-start md:self-auto">
-                    <label class="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" id="chatSearchGroundingToggle" class="sr-only peer" checked>
-                        <div class="w-9 h-5 bg-brand-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate-200"></div>
-                    </label>
-                    <div class="text-xs">
-                        <span class="font-medium text-slate-200 block">Web Search Grounding</span>
-                    </div>
+                    <p class="text-xs text-slate-400 mt-1">Inquire about proofs, historical contexts, or search metrics directly in Gemini.</p>
                 </div>
             </div>
 
@@ -405,7 +362,7 @@
                         <div class="space-y-1">
                             <span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
                             <p class="text-xs text-slate-300 leading-relaxed">
-                                Welcome. Enter any question to inquire about mathematical proofs, history, or search trends. If an API key is active, Gemini answers directly inside the app; otherwise, inquiries launch directly in Gemini!
+                                Welcome. Enter any inquiry below. The prompt will be automatically copied to your clipboard and launched in Gemini to generate your complete analysis.
                             </p>
                         </div>
                     </div>
@@ -414,7 +371,8 @@
                 <form onsubmit="handleChatSubmit(event)" class="p-3 bg-brand-900 border-t border-brand-800 flex items-center gap-2">
                     <input type="text" id="chatInput" placeholder="Enter inquiry for Gemini..." class="flex-grow bg-brand-800 text-slate-100 placeholder-slate-500 text-xs sm:text-sm rounded-lg px-4 py-2.5 border border-brand-700 focus:outline-none focus:border-slate-500">
                     <button type="submit" id="chatSubmitBtn" class="px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center gap-2 flex-shrink-0">
-                        <span>Ask / Launch Gemini</span>
+                        <span>Launch Gemini Prompt</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                     </button>
                 </form>
             </div>
@@ -423,8 +381,8 @@
         <!-- VIEW 5: DIALOGUES & AUDIO SYNTHESIS -->
         <section id="view-debates" class="page-view space-y-8 hidden">
             <div class="panel-card p-6">
-                <h2 class="text-xl font-semibold text-slate-100">Historical Dialogues & Speech Synthesis</h2>
-                <p class="text-xs text-slate-400 mt-1">Synthesize multi-speaker philosophical dialogues between mathematical figures.</p>
+                <h2 class="text-xl font-semibold text-slate-100">Historical Dialogues & Speech Generation</h2>
+                <p class="text-xs text-slate-400 mt-1">Construct philosophical dialogues between mathematical figures and generate scripts for Gemini.</p>
             </div>
 
             <div class="panel-card p-6 space-y-6">
@@ -464,11 +422,7 @@
 
                 <div class="flex flex-wrap gap-3 items-center justify-between pt-2">
                     <button onclick="generateAIDebate()" id="generateDebateBtn" class="px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center gap-2">
-                        <i class="fa-solid fa-align-left text-[10px]"></i> Generate Dialogue Script
-                    </button>
-
-                    <button onclick="synthesizeDebateAudio()" id="synthesizeAudioBtn" class="px-4 py-2.5 rounded-lg bg-brand-800 hover:bg-brand-700 text-slate-200 border border-brand-700 font-semibold text-xs transition flex items-center gap-2 disabled:opacity-50" disabled>
-                        <i class="fa-solid fa-volume-high text-[10px]"></i> Synthesize Audio
+                        <i class="fa-solid fa-sparkles text-[10px]"></i> Open Gemini with Dialogue Prompt
                     </button>
                 </div>
             </div>
@@ -476,16 +430,12 @@
             <!-- Dialogue Transcript Output -->
             <div class="panel-card p-6 space-y-4">
                 <div class="flex items-center justify-between border-b border-brand-800 pb-3">
-                    <h3 class="text-sm font-semibold text-slate-200">Transcript</h3>
-                    <div id="audioPlayerContainer" class="hidden flex items-center gap-3 bg-brand-900 px-3 py-1.5 rounded-lg border border-brand-800">
-                        <span class="text-xs font-mono text-slate-400">Audio:</span>
-                        <audio id="ttsAudioPlayer" controls class="h-6 max-w-xs"></audio>
-                    </div>
+                    <h3 class="text-sm font-semibold text-slate-200">Generated Dialogue Prompt</h3>
                 </div>
 
                 <div id="debateTranscript" class="min-h-[180px] bg-brand-900/40 p-6 rounded-lg border border-brand-800 font-sans text-xs sm:text-sm leading-relaxed space-y-3 text-slate-300">
                     <p class="text-xs text-slate-500 italic text-center py-6">
-                        Select debaters and click "Generate Dialogue Script" to begin.
+                        Select debaters and click "Open Gemini with Dialogue Prompt" to launch Gemini with your custom dialogue script query.
                     </p>
                 </div>
             </div>
@@ -495,7 +445,7 @@
         <section id="view-vision" class="page-view space-y-8 hidden">
             <div class="panel-card p-6">
                 <h2 class="text-xl font-semibold text-slate-100">Theorem & Historical Visual Studio</h2>
-                <p class="text-xs text-slate-400 mt-1">Render artwork, chalkboard proofs, and geometric visualizations.</p>
+                <p class="text-xs text-slate-400 mt-1">Generate image creation prompts for artwork, chalkboard proofs, and geometric visualizations in Gemini.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -528,127 +478,20 @@
                     </div>
 
                     <button onclick="generateAIArtwork()" id="generateArtBtn" class="w-full py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center justify-center gap-2">
-                        <span>Generate Image / Gemini</span>
+                        <span>Generate Image / Open Gemini</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                     </button>
                 </div>
 
                 <div class="panel-card p-6 lg:col-span-2 flex flex-col items-center justify-center min-h-[400px] text-center border border-brand-800 relative">
-                    <div id="artPlaceholder" class="space-y-2 p-8">
-                        <div class="w-12 h-12 rounded-lg bg-brand-900 border border-brand-800 text-slate-400 flex items-center justify-center mx-auto text-lg">
-                            <i class="fa-regular fa-image"></i>
+                    <div id="artPlaceholder" class="space-y-3 p-8">
+                        <div class="w-12 h-12 rounded-lg bg-brand-900 border border-brand-800 text-purple-300 flex items-center justify-center mx-auto text-lg">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
                         </div>
-                        <h4 class="font-medium text-sm text-slate-300">Image Display Canvas</h4>
-                        <p class="text-xs text-slate-500 max-w-sm">
-                            Select parameters to render technical diagrams and historical illustrations.
+                        <h4 class="font-medium text-sm text-slate-200">Image Generation Prompt Studio</h4>
+                        <p class="text-xs text-slate-400 max-w-sm">
+                            Select parameters to format a image generation prompt and launch directly into Gemini.
                         </p>
-                    </div>
-
-                    <div id="artLoading" class="hidden space-y-3">
-                        <div class="inline-block animate-spin rounded-full h-8 w-8 border-2 border-slate-300 border-t-transparent"></div>
-                        <p class="text-xs font-mono text-slate-400">Rendering visual canvas...</p>
-                    </div>
-
-                    <img id="artOutputImg" class="hidden w-full max-h-[480px] object-contain rounded-lg border border-brand-800" alt="Generated Artwork Output">
-                </div>
-            </div>
-        </section>
-
-        <!-- VIEW 7: FORMULA SANDBOX -->
-        <section id="view-sandbox" class="page-view space-y-8 hidden">
-            <div class="panel-card p-6">
-                <h2 class="text-xl font-semibold text-slate-100">Formula & Theorem Sandbox</h2>
-                <p class="text-xs text-slate-400 mt-1">Interactive modules exploring fundamental equations that drive lifelong search volume.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Pythagoras Sandbox -->
-                <div class="panel-card p-6 space-y-4">
-                    <div class="flex items-center justify-between border-b border-brand-800 pb-3">
-                        <span class="text-xs font-mono text-slate-400">Pythagorean Theorem</span>
-                        <span class="font-mono text-xs text-slate-300">a² + b² = c²</span>
-                    </div>
-
-                    <div class="space-y-4 bg-brand-900 p-4 rounded-lg border border-brand-800">
-                        <div>
-                            <div class="flex justify-between text-xs font-mono mb-1">
-                                <span>Side a: <b id="valA" class="text-slate-200">3</b></span>
-                            </div>
-                            <input type="range" id="sliderA" min="1" max="25" value="3" oninput="calcPythagoras()" class="w-full accent-slate-300">
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs font-mono mb-1">
-                                <span>Side b: <b id="valB" class="text-slate-200">4</b></span>
-                            </div>
-                            <input type="range" id="sliderB" min="1" max="25" value="4" oninput="calcPythagoras()" class="w-full accent-slate-300">
-                        </div>
-                    </div>
-
-                    <div class="p-3 bg-brand-900 rounded-lg border border-brand-800 text-center font-mono">
-                        <span class="text-xs text-slate-400">Hypotenuse (c) = </span>
-                        <span id="resultC" class="text-base font-bold text-slate-100">5.00</span>
-                    </div>
-
-                    <button onclick="askAIFormula('Pythagorean Theorem', 'a^2 + b^2 = c^2')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
-                        <span>Inquire with Gemini</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </button>
-                </div>
-
-                <!-- Ramanujan Taxicab 1729 -->
-                <div class="panel-card p-6 space-y-4">
-                    <div class="flex items-center justify-between border-b border-brand-800 pb-3">
-                        <span class="text-xs font-mono text-slate-400">Hardy-Ramanujan Number</span>
-                        <span class="font-mono text-xs text-slate-300">Taxicab 1729</span>
-                    </div>
-
-                    <div class="space-y-2 bg-brand-900 p-4 rounded-lg border border-brand-800 font-mono text-xs">
-                        <div class="p-2.5 bg-brand-800/80 rounded text-center border border-brand-700">
-                            1³ + 12³ = 1 + 1728 = <b class="text-slate-100">1729</b>
-                        </div>
-                        <div class="p-2.5 bg-brand-800/80 rounded text-center border border-brand-700">
-                            9³ + 10³ = 729 + 1000 = <b class="text-slate-100">1729</b>
-                        </div>
-                    </div>
-
-                    <button onclick="askAIFormula('Hardy-Ramanujan 1729', '1^3 + 12^3 = 9^3 + 10^3 = 1729')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
-                        <span>Inquire with Gemini</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </button>
-                </div>
-
-                <!-- Euler's Identity -->
-                <div class="panel-card p-6 space-y-4">
-                    <div class="flex items-center justify-between border-b border-brand-800 pb-3">
-                        <span class="text-xs font-mono text-slate-400">Euler's Identity</span>
-                        <span class="font-mono text-xs text-slate-300">e^(iπ) + 1 = 0</span>
-                    </div>
-
-                    <div class="p-6 bg-brand-900 rounded-lg border border-brand-800 text-center font-mono">
-                        <span class="text-xl font-bold text-slate-100">e<sup>iπ</sup> + 1 = 0</span>
-                    </div>
-
-                    <button onclick="askAIFormula('Euler Identity', 'e^(i*pi) + 1 = 0')" class="w-full py-2 rounded-lg bg-brand-900 hover:bg-brand-800 text-slate-300 border border-brand-800 font-medium text-xs transition flex items-center justify-center gap-2">
-                        <span>Inquire with Gemini</span>
-                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </button>
-                </div>
-
-                <!-- Euclid GCD -->
-                <div class="panel-card p-6 space-y-4">
-                    <div class="flex items-center justify-between border-b border-brand-800 pb-3">
-                        <span class="text-xs font-mono text-slate-400">Euclidean GCD Algorithm</span>
-                        <span class="font-mono text-xs text-slate-300">gcd(a, b)</span>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <input type="number" id="gcdNum1" value="252" class="w-1/2 p-2 bg-brand-900 border border-brand-800 rounded text-xs font-mono text-slate-100">
-                        <input type="number" id="gcdNum2" value="105" class="w-1/2 p-2 bg-brand-900 border border-brand-800 rounded text-xs font-mono text-slate-100">
-                    </div>
-                    <button onclick="calcGCD()" class="w-full py-2 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition">
-                        Compute GCD
-                    </button>
-                    <div id="gcdOutput" class="p-2.5 bg-brand-900 rounded font-mono text-xs text-center text-slate-200 border border-brand-800">
-                        GCD(252, 105) = 21
                     </div>
                 </div>
             </div>
@@ -666,7 +509,6 @@
 
     <!-- JavaScript Application Logic -->
     <script>
-        let API_KEY = "";
         let currentGeo = "worldwide";
         let currentDebateText = "";
 
@@ -733,6 +575,28 @@
             }
         };
 
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function openGeminiWithPrompt(promptText) {
+            if (promptText) {
+                copyToClipboard(promptText);
+            }
+            window.open('https://gemini.google.com/app', '_blank');
+        }
+
         function navigateTo(viewId) {
             document.querySelectorAll('.page-view').forEach(view => {
                 view.classList.add('hidden');
@@ -762,54 +626,6 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             if (menu) menu.classList.toggle('hidden');
-        }
-
-        function getActiveApiKey() {
-            const storedKey = localStorage.getItem('gemini_api_key');
-            if (storedKey && storedKey.trim().length > 0) return storedKey.trim();
-            return API_KEY;
-        }
-
-        function isApiKeyValid() {
-            const key = getActiveApiKey();
-            return key && key.trim() !== "";
-        }
-
-        function toggleApiKeyModal() {
-            const modal = document.getElementById('apiKeyModal');
-            if (modal) modal.classList.toggle('hidden');
-            const input = document.getElementById('userApiKeyInput');
-            if (input) input.value = localStorage.getItem('gemini_api_key') || '';
-        }
-
-        function saveUserApiKey() {
-            const val = document.getElementById('userApiKeyInput').value.trim();
-            if (val) {
-                localStorage.setItem('gemini_api_key', val);
-            } else {
-                localStorage.removeItem('gemini_api_key');
-            }
-            updateApiKeyBtnText();
-            toggleApiKeyModal();
-        }
-
-        function clearUserApiKey() {
-            localStorage.removeItem('gemini_api_key');
-            const input = document.getElementById('userApiKeyInput');
-            if (input) input.value = '';
-            updateApiKeyBtnText();
-            toggleApiKeyModal();
-        }
-
-        function updateApiKeyBtnText() {
-            const btnText = document.getElementById('apiKeyBtnText');
-            if (btnText) {
-                if (isApiKeyValid()) {
-                    btnText.innerText = "Gemini Key Saved";
-                } else {
-                    btnText.innerText = "Set Gemini Key";
-                }
-            }
         }
 
         function renderHomeCards() {
@@ -971,37 +787,23 @@
             renderH2H();
         }
 
-        async function fetchWithBackoff(url, options, maxRetries = 3) {
-            let delay = 1000;
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    const res = await fetch(url, options);
-                    if (res.ok) return res;
-                } catch (err) {
-                    if (i === maxRetries - 1) throw err;
-                }
-                await new Promise(r => setTimeout(r, delay));
-                delay *= 2;
-            }
-            return await fetch(url, options);
-        }
-
         function setChatPrompt(promptText) {
             document.getElementById('chatInput').value = promptText;
             navigateTo('ai-chat');
         }
 
         function askAIFormula(formulaName, formulaText) {
-            setChatPrompt(`Explain ${formulaName} (${formulaText}), its historical origin, and modern mathematical significance.`);
+            const prompt = `Explain ${formulaName} (${formulaText}), its historical origin, and modern mathematical significance.`;
+            setChatPrompt(prompt);
+            openGeminiWithPrompt(prompt);
         }
 
-        async function handleChatSubmit(e) {
+        function handleChatSubmit(e) {
             e.preventDefault();
             const inputEl = document.getElementById('chatInput');
             const userMsg = inputEl.value.trim();
             if (!userMsg) return;
 
-            const useGrounding = document.getElementById('chatSearchGroundingToggle').checked;
             const messagesContainer = document.getElementById('chatMessages');
 
             const userBubble = document.createElement('div');
@@ -1018,113 +820,33 @@
             const aiBubble = document.createElement('div');
             aiBubble.className = "flex items-start gap-3 bg-brand-900/60 p-4 rounded-xl border border-brand-800 max-w-3xl";
 
-            // Fallback redirect if no API key is set
-            if (!isApiKeyValid()) {
-                const geminiUrl = `https://gemini.google.com/app`;
-                try {
-                    window.open(geminiUrl, '_blank');
-                } catch (err) {
-                    console.log('Popup prevented:', err);
-                }
-
-                aiBubble.innerHTML = `
-                    <div class="w-7 h-7 rounded-md bg-purple-900/60 border border-purple-500/40 flex items-center justify-center text-purple-300 text-xs font-mono flex-shrink-0">
-                        <i class="fa-solid fa-sparkles text-xs"></i>
-                    </div>
-                    <div class="space-y-2 flex-grow">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-semibold text-slate-200">Gemini Redirect</span>
-                            <span class="text-[10px] font-mono text-purple-300 bg-purple-900/50 px-2 py-0.5 rounded border border-purple-700/50">Gemini App</span>
-                        </div>
-                        <p class="text-xs text-slate-300 leading-relaxed">
-                            Opening Gemini for inquiry: <b class="text-slate-100">"${escapeHtml(userMsg)}"</b>
-                        </p>
-                        <p class="text-[11px] text-slate-400">Tip: Click "Set Gemini Key" in the top bar to get direct AI responses right inside this application.</p>
-                        <div class="pt-1">
-                            <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-medium transition">
-                                <span>Open Gemini App</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                            </a>
-                        </div>
-                    </div>
-                `;
-                messagesContainer.appendChild(aiBubble);
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-                return;
-            }
-
-            // Live AI mode
             aiBubble.innerHTML = `
-                <div class="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-xs font-mono flex-shrink-0 animate-pulse">
-                    AI
+                <div class="w-7 h-7 rounded-md bg-purple-900/60 border border-purple-500/40 flex items-center justify-center text-purple-300 text-xs font-mono flex-shrink-0">
+                    <i class="fa-solid fa-sparkles text-xs"></i>
                 </div>
                 <div class="space-y-2 flex-grow">
-                    <span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
-                    <p class="text-xs text-slate-500 font-mono italic animate-pulse">Processing inquiry with Gemini...</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-200">Gemini Prompt Prepared</span>
+                        <span class="text-[10px] font-mono text-purple-300 bg-purple-900/50 px-2 py-0.5 rounded border border-purple-700/50">Copied to Clipboard</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Prompt copied: <b class="text-slate-100">"${escapeHtml(userMsg)}"</b>
+                    </p>
+                    <div class="pt-1 flex items-center gap-2">
+                        <button onclick="openGeminiWithPrompt(\`${escapeHtml(userMsg)}\`)" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-200 border border-purple-500/40 text-xs font-medium transition">
+                            <span>Open Gemini App</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
                 </div>
             `;
             messagesContainer.appendChild(aiBubble);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
-            try {
-                const systemPrompt = "You are a mathematical research assistant for the Math Legacy Index platform. Provide concise, logically structured explanations.";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${getActiveApiKey()}`;
-                
-                const payload = {
-                    contents: [{ parts: [{ text: userMsg }] }],
-                    systemInstruction: { parts: [{ text: systemPrompt }] }
-                };
-
-                if (useGrounding) {
-                    payload.tools = [{ "google_search": {} }];
-                }
-
-                const response = await fetchWithBackoff(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-                const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || "Unable to compute response.";
-
-                let sourcesHtml = '';
-                const groundingMetadata = result?.candidates?.[0]?.groundingMetadata;
-                if (groundingMetadata && groundingMetadata.groundingAttributions) {
-                    const sources = groundingMetadata.groundingAttributions
-                        .map(a => ({ uri: a.web?.uri, title: a.web?.title }))
-                        .filter(s => s.uri && s.title);
-
-                    if (sources.length > 0) {
-                        sourcesHtml = `<div class="mt-3 pt-2 border-t border-brand-800 text-[11px] space-y-1">
-                            <span class="font-mono text-slate-500 uppercase text-[10px]">Sources:</span>
-                            <div class="flex flex-wrap gap-2">
-                                ${sources.map(s => `<a href="${s.uri}" target="_blank" class="text-slate-300 hover:text-white flex items-center gap-1 underline"><i class="fa-solid fa-link text-[9px]"></i> ${escapeHtml(s.title)}</a>`).join('')}
-                            </div>
-                        </div>`;
-                    }
-                }
-
-                aiBubble.querySelector('.space-y-2').innerHTML = `
-                    <span class="text-xs font-semibold text-slate-300">Analytical Assistant</span>
-                    <div class="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap">${formatMarkdownText(text)}</div>
-                    ${sourcesHtml}
-                `;
-
-            } catch (err) {
-                const geminiUrl = `https://gemini.google.com/app`;
-                aiBubble.querySelector('.space-y-2').innerHTML = `
-                    <span class="text-xs font-semibold text-slate-300">Gemini Redirect</span>
-                    <p class="text-xs text-slate-300">API connection unavailable. Click below to continue in Gemini:</p>
-                    <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-purple-300 hover:text-purple-200 underline mt-1">
-                        Open Gemini App <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
-                `;
-            }
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            openGeminiWithPrompt(userMsg);
         }
 
-        async function generateAIDebate() {
+        function generateAIDebate() {
             const spk1 = document.getElementById('debateSpeaker1').value;
             const spk2 = document.getElementById('debateSpeaker2').value;
             const topic = document.getElementById('debateTopic').value;
@@ -1134,269 +856,55 @@
                 return;
             }
 
-            const btn = document.getElementById('generateDebateBtn');
-            const synthBtn = document.getElementById('synthesizeAudioBtn');
             const container = document.getElementById('debateTranscript');
+            const prompt = `Write a balanced 4-turn philosophical dialogue between ${spk1} and ${spk2} discussing: "${topic}". Format strictly as:\n${spk1}: [dialogue]\n${spk2}: [dialogue]\nEnsure each speaker accurately represents their historical philosophy.`;
 
-            if (!isApiKeyValid()) {
-                const geminiUrl = `https://gemini.google.com/app`;
-                try {
-                    window.open(geminiUrl, '_blank');
-                } catch(e) {}
-                container.innerHTML = `
-                    <div class="text-center py-6 space-y-3">
-                        <p class="text-xs text-slate-300">Redirecting debate prompt between <b>${spk1}</b> and <b>${spk2}</b> to Gemini...</p>
-                        <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-medium transition">
-                            <span>Open Gemini App</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                        </a>
+            container.innerHTML = `
+                <div class="p-4 bg-brand-900 rounded-lg border border-brand-800 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono text-purple-300 uppercase">Prompt copied to clipboard!</span>
+                        <span class="text-[10px] font-mono text-slate-400">Dialogue Target: ${spk1} vs ${spk2}</span>
                     </div>
-                `;
-                return;
-            }
+                    <p class="text-xs font-mono text-slate-300 bg-brand-950 p-3 rounded border border-brand-800 whitespace-pre-wrap">${escapeHtml(prompt)}</p>
+                    <div class="pt-2">
+                        <button onclick="openGeminiWithPrompt(\`${escapeHtml(prompt)}\`)" class="px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition flex items-center gap-2">
+                            <span>Launch Gemini App</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
 
-            btn.disabled = true;
-            btn.innerHTML = `Generating Dialogue...`;
-            container.innerHTML = `<p class="text-xs text-slate-400 font-mono animate-pulse text-center py-6">Drafting discussion between ${spk1} and ${spk2}...</p>`;
-
-            try {
-                const prompt = `Write a balanced 4-turn debate dialogue between ${spk1} and ${spk2} discussing: "${topic}". Format strictly as:\n${spk1}: [dialogue]\n${spk2}: [dialogue]\nKeep total turns under 6. Ensure each speaker accurately represents their historical philosophy.`;
-                
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${getActiveApiKey()}`;
-                const response = await fetchWithBackoff(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                });
-
-                const data = await response.json();
-                const dialogue = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Unable to generate dialogue.";
-
-                currentDebateText = dialogue;
-                container.innerHTML = formatDebateDialogue(dialogue, spk1, spk2);
-                synthBtn.disabled = false;
-
-            } catch (e) {
-                container.innerHTML = `<p class="text-xs text-rose-400">Error generating transcript.</p>`;
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = `<i class="fa-solid fa-align-left text-[10px]"></i> Generate Dialogue Script`;
-            }
+            openGeminiWithPrompt(prompt);
         }
 
-        async function synthesizeDebateAudio() {
-            if (!currentDebateText) return;
-
-            const synthBtn = document.getElementById('synthesizeAudioBtn');
-            const playerContainer = document.getElementById('audioPlayerContainer');
-            const player = document.getElementById('ttsAudioPlayer');
-
-            synthBtn.disabled = true;
-            synthBtn.innerHTML = `Synthesizing...`;
-
-            try {
-                const spk1 = document.getElementById('debateSpeaker1').value;
-                const spk2 = document.getElementById('debateSpeaker2').value;
-
-                const payload = {
-                    contents: [{
-                        parts: [{ text: `TTS conversation between ${spk1} and ${spk2}:\n${currentDebateText}` }]
-                    }],
-                    generationConfig: {
-                        responseModalities: ["AUDIO"],
-                        speechConfig: {
-                            multiSpeakerVoiceConfig: {
-                                speakerVoiceConfigs: [
-                                    { speaker: spk1, voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } },
-                                    { speaker: spk2, voiceConfig: { prebuiltVoiceConfig: { voiceName: "Puck" } } }
-                                ]
-                            }
-                        }
-                    },
-                    model: "gemini-2.5-flash-preview-tts"
-                };
-
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${getActiveApiKey()}`;
-                const response = await fetchWithBackoff(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-                const part = result?.candidates?.[0]?.content?.parts?.[0];
-                const audioData = part?.inlineData?.data;
-                const mimeType = part?.inlineData?.mimeType;
-
-                if (audioData && mimeType) {
-                    const sampleRateMatch = mimeType.match(/rate=(\d+)/);
-                    const sampleRate = sampleRateMatch ? parseInt(sampleRateMatch[1], 10) : 24000;
-
-                    const pcmBuffer = base64ToArrayBuffer(audioData);
-                    const pcm16 = new Int16Array(pcmBuffer);
-                    const wavBlob = pcmToWav(pcm16, sampleRate);
-                    const audioUrl = URL.createObjectURL(wavBlob);
-
-                    player.src = audioUrl;
-                    playerContainer.classList.remove('hidden');
-                    player.play();
-                } else {
-                    alert("Audio synthesis payload missing binary data.");
-                }
-            } catch (err) {
-                alert("Failed to synthesize audio.");
-            } finally {
-                synthBtn.disabled = false;
-                synthBtn.innerHTML = `<i class="fa-solid fa-volume-high text-[10px]"></i> Synthesize Audio`;
-            }
-        }
-
-        async function generateAIArtwork() {
+        function generateAIArtwork() {
             const titan = document.getElementById('artTitan').value;
             const style = document.getElementById('artStyle').value;
             const overlay = document.getElementById('artCustomPrompt').value.trim();
 
-            const fullPrompt = `${titan}. Style: ${style}. ${overlay}`;
-
-            const btn = document.getElementById('generateArtBtn');
+            const prompt = `Create a high quality visual image of ${titan}. Aesthetic Style: ${style}. Additional context: ${overlay || 'None'}.`;
             const placeholder = document.getElementById('artPlaceholder');
-            const loading = document.getElementById('artLoading');
-            const outputImg = document.getElementById('artOutputImg');
 
-            if (!isApiKeyValid()) {
-                const geminiUrl = `https://gemini.google.com/app`;
-                try {
-                    window.open(geminiUrl, '_blank');
-                } catch(e) {}
-                loading.classList.add('hidden');
-                placeholder.classList.remove('hidden');
-                placeholder.innerHTML = `
-                    <div class="space-y-3 p-4">
-                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-300 flex items-center justify-center mx-auto text-base">
-                            <i class="fa-solid fa-sparkles"></i>
-                        </div>
-                        <h4 class="font-medium text-sm text-slate-200">Gemini Redirect</h4>
-                        <p class="text-xs text-slate-400 max-w-sm">Opening Gemini for visual rendering prompt generation.</p>
-                        <a href="${geminiUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-medium transition">
-                            <span>Open Gemini App</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                        </a>
+            placeholder.innerHTML = `
+                <div class="space-y-3 p-4">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-300 flex items-center justify-center mx-auto text-base">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
                     </div>
-                `;
-                btn.disabled = false;
-                return;
-            }
+                    <h4 class="font-medium text-sm text-slate-200">Image Prompt Copied to Clipboard</h4>
+                    <p class="text-xs font-mono text-slate-300 bg-brand-950 p-3 rounded border border-brand-800 text-left">${escapeHtml(prompt)}</p>
+                    <button onclick="openGeminiWithPrompt(\`${escapeHtml(prompt)}\`)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-white text-slate-900 font-semibold text-xs transition">
+                        <span>Open Gemini Image Generator</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </button>
+                </div>
+            `;
 
-            btn.disabled = true;
-            placeholder.classList.add('hidden');
-            outputImg.classList.add('hidden');
-            loading.classList.remove('hidden');
-
-            try {
-                const payload = {
-                    contents: [{ parts: [{ text: fullPrompt }] }],
-                    generationConfig: {
-                        responseModalities: ['IMAGE'],
-                        imageConfig: { aspectRatio: "16:9" }
-                    }
-                };
-
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image:generateContent?key=${getActiveApiKey()}`;
-                const response = await fetchWithBackoff(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-                const part = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData);
-
-                if (part) {
-                    const imageUrl = `data:${part.inlineData.mimeType};base64,${part.inlineData.data}`;
-                    outputImg.src = imageUrl;
-                    outputImg.classList.remove('hidden');
-                } else {
-                    const geminiUrl = `https://gemini.google.com/app`;
-                    window.open(geminiUrl, '_blank');
-                }
-
-            } catch (err) {
-                const geminiUrl = `https://gemini.google.com/app`;
-                window.open(geminiUrl, '_blank');
-            } finally {
-                loading.classList.add('hidden');
-                btn.disabled = false;
-            }
-        }
-
-        function pcmToWav(pcm16Data, sampleRate = 24000) {
-            const numChannels = 1;
-            const bytesPerSample = 2;
-            const blockAlign = numChannels * bytesPerSample;
-            const byteRate = sampleRate * blockAlign;
-            const dataSize = pcm16Data.length * bytesPerSample;
-            const buffer = new ArrayBuffer(44 + dataSize);
-            const view = new DataView(buffer);
-
-            writeString(view, 0, 'RIFF');
-            view.setUint32(4, 36 + dataSize, true);
-            writeString(view, 8, 'WAVE');
-            writeString(view, 12, 'fmt ');
-            view.setUint32(16, 16, true);
-            view.setUint16(20, 1, true);
-            view.setUint16(22, numChannels, true);
-            view.setUint32(24, sampleRate, true);
-            view.setUint32(28, byteRate, true);
-            view.setUint16(32, blockAlign, true);
-            view.setUint16(34, 16, true);
-            writeString(view, 36, 'data');
-            view.setUint32(40, dataSize, true);
-
-            for (let i = 0; i < pcm16Data.length; i++) {
-                view.setInt16(44 + i * 2, pcm16Data[i], true);
-            }
-
-            return new Blob([buffer], { type: 'audio/wav' });
-        }
-
-        function writeString(view, offset, string) {
-            for (let i = 0; i < string.length; i++) {
-                view.setUint8(offset + i, string.charCodeAt(i));
-            }
-        }
-
-        function base64ToArrayBuffer(base64) {
-            const binaryString = window.atob(base64);
-            const len = binaryString.length;
-            const bytes = new Uint8Array(len);
-            for (let i = 0; i < len; i++) {
-                bytes[i] = binaryString.charCodeAt(i);
-            }
-            return bytes.buffer;
+            openGeminiWithPrompt(prompt);
         }
 
         function escapeHtml(text) {
             return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        }
-
-        function formatMarkdownText(text) {
-            return text
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                .replace(/`([^`]+)`/g, '<code class="bg-brand-900 px-1 py-0.5 rounded font-mono text-slate-200">$1</code>');
-        }
-
-        function formatDebateDialogue(dialogue, spk1, spk2) {
-            const lines = dialogue.split('\n').filter(l => l.trim().length > 0);
-            return lines.map(line => {
-                if (line.startsWith(`${spk1}:`)) {
-                    return `<div class="p-3 bg-brand-900 rounded-lg border border-brand-800"><b class="text-slate-100 font-medium">${spk1}:</b> ${escapeHtml(line.replace(`${spk1}:`, ''))}</div>`;
-                } else if (line.startsWith(`${spk2}:`)) {
-                    return `<div class="p-3 bg-brand-900/80 rounded-lg border border-brand-800"><b class="text-slate-200 font-medium">${spk2}:</b> ${escapeHtml(line.replace(`${spk2}:`, ''))}</div>`;
-                } else {
-                    return `<div class="p-2 text-slate-400 italic">${escapeHtml(line)}</div>`;
-                }
-            }).join('');
         }
 
         function calcPythagoras() {
@@ -1423,7 +931,6 @@
         window.addEventListener('DOMContentLoaded', () => {
             renderHomeCards();
             renderDossierCards();
-            updateApiKeyBtnText();
         });
     </script>
 </body>
